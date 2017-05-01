@@ -11,16 +11,23 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
+import { ExamsDoctorPage } from '../pages/exams-doctor/exams-doctor';
+import { ExamsPatientPage } from '../pages/exams-patient/exams-patient';
+import { ExamsPage } from '../pages/exams/exams';
 
 // Services
-import { LoginService } from '../services/login.service';
+import { AuthService } from '../services/auth.service';
+import { ExamService } from '../services/exam.service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AboutPage,
-    LoginPage
+    LoginPage,
+    ExamsDoctorPage,
+    ExamsPatientPage,
+    ExamsPage
   ],
   imports: [
     BrowserModule,
@@ -32,10 +39,14 @@ import { LoginService } from '../services/login.service';
     MyApp,
     HomePage,
     AboutPage,
-    LoginPage
+    LoginPage,
+    ExamsDoctorPage,
+    ExamsPatientPage,
+    ExamsPage
   ],
   providers: [
-    LoginService,
+    AuthService,
+    ExamService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

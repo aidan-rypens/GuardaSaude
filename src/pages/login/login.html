@@ -16,12 +16,12 @@
 
     <ion-item>
         <ion-label>Usuario ou Email</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="model.email"></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label>Senha</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="model.password"></ion-input>
     </ion-item>
-
+    <button ion-button (click)='onLoginClick();' color="saudeGreenLight">Login</button>
 </ion-content>

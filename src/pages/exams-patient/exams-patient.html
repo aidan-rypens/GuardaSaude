@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ExamsPatient page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-title>Patient Exams</ion-title>
+    </ion-navbar>
+    <ion-searchbar (ionInput)="searchBarEvent($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngFor="let exam of exams">
+        <ion-card-content>
+            <ion-row>
+                <ion-col class="col-left" col-4>
+                    {{exam.examId}}
+                </ion-col>
+                <ion-col class="col-right" col-8>
+                    <ion-icon class="icon-card" ios="ios-medkit" md="md-medkit"></ion-icon>
+                    {{exam.clinicName}}
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="col-left" col-4>
+                    <ion-icon class="icon-card-planning" ios="ios-time" md="md-time"></ion-icon>
+                </ion-col>
+                <ion-col class="col-right col-right-center" col-8>
+                    <ion-icon class="icon-card" ios="ios-person" md="md-person"></ion-icon>
+                    {{exam.patientName}}
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="col-left" col-4>
+                    {{exam.examStatus}}
+                </ion-col>
+                <ion-col class="col-right" col-8>
+                    <ion-icon class="icon-card" ios="ios-calendar" md="md-calendar"></ion-icon>
+                    {{exam.examDate}}
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
