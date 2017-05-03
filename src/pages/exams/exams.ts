@@ -3,6 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { Exam } from '../../domain/exam';
 
+import { ExamsDoctorPage } from '../exams-doctor/exams-doctor'
+import { ExamsPatientPage } from '../exams-patient/exams-patient';
+
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
 
@@ -17,12 +20,15 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: 'exams.html',
 })
 export class ExamsPage {
+  private userRoles: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  Patient = ExamsPatientPage;
+  Doctor = ExamsDoctorPage;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {
+    this.userRoles = this.authService.getCurrentUserRoles();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Exams');
   }
-
 }

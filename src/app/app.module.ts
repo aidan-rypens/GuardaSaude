@@ -32,7 +32,7 @@ import { ExamService } from '../services/exam.service';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {tabsPlacement: 'top'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [

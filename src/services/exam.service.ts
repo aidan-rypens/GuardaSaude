@@ -12,8 +12,8 @@ import { environment } from '../environments/environment';
 export class ExamService {
     constructor(private http: Http) {}
 
-    listExams(username: string, token: string) {
-        return this.http.get(environment.baseApi + environment.listExamsUrl + 'user=' + username + '&token=' + token)
+    listExams(username: string, token: string, accessRole: string) {
+        return this.http.get(environment.baseApi + environment.listExamsUrl + 'user=' + username + '&token=' + token + '&accessRole' + accessRole)
         .map(this.handleRequest)
         .catch(this.handleError);
     }

@@ -24,6 +24,11 @@ export class AuthService {
         return userInfo;
     }
 
+    getCurrentUserRoles() {
+        let currentUserRoles = (localStorage.getItem('currentUserRoles')).split(',');
+        return currentUserRoles;
+    }
+
     login(username: string, password: string) {
         localStorage.setItem('currentUser', atob(username));
         return this.http.get(environment.baseApi + environment.loginUrl + 'LDWI=' + username + '&GKSP=' + password)
@@ -33,19 +38,21 @@ export class AuthService {
 
     logout() {
         localStorage.removeItem('currentUser')
+        localStorage.removeItem('currentUserRoles');
     }
 
-    private handleRequest(res: Response) {        
+    handleRequest(res: Response) {        
         let body = res.json();
         if (body.success) {
             localStorage.setItem('token', (body.token));
+            localStorage.setItem('currentUserRoles', (body.roles));
             return true;
         } else {
             return false;
         }
     }
 
-    private handleError(error: Response | any) {
+    handleError(error: Response | any) {
         // Connect logging infrastructure
         let errMsg: string;
         if (error instanceof Response) {
@@ -58,4 +65,6 @@ export class AuthService {
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
+ 
+
 }
