@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
 import { AuthService } from '../../services/auth.service';
 
 /**
@@ -15,8 +14,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {}
 
   private model: any = {};
   private loginResult: any = {};
@@ -30,18 +28,6 @@ export class LoginPage {
     this.password='dGVzdGU=';
     this.model.email = this.email;
     this.model.password = this.password;
-    //
-
-    /*
-    this.loginService.getLoginStatus(this.model.email, this.model.password).subscribe(
-      data => {
-        this.loginResult = data;
-        //console.log(this.loginResult);
-
-        if (this.loginResult.success) {
-        }
-      }
-    )*/
 
     this.authService.login(this.model.email, this.model.password).subscribe(
       response => {

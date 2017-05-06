@@ -1,17 +1,13 @@
 page-login {}
 
-.logo {
-    width: auto;
-    height: auto;
+.login-logo {
     display: block;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 120px;
 }
 
-.button {
-    width: 100px;
-    margin-left: 15px;
-    margin-right: auto;
-    margin-top: 25px;
+#submit {
+    margin-top: 40px;
 }

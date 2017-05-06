@@ -11,6 +11,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
+import { LandingPage } from '../pages/landing/landing';
 import { ExamsDoctorPage } from '../pages/exams-doctor/exams-doctor';
 import { ExamsPatientPage } from '../pages/exams-patient/exams-patient';
 import { ExamsPage } from '../pages/exams/exams';
@@ -27,7 +28,8 @@ import { ExamService } from '../services/exam.service';
     LoginPage,
     ExamsDoctorPage,
     ExamsPatientPage,
-    ExamsPage
+    ExamsPage,
+    LandingPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { ExamService } from '../services/exam.service';
     LoginPage,
     ExamsDoctorPage,
     ExamsPatientPage,
-    ExamsPage
+    ExamsPage,
+    LandingPage
   ],
   providers: [
     AuthService,

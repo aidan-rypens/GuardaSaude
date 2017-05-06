@@ -1,14 +1,19 @@
 <ion-header>
     <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
         <ion-title>
             Guarda Saude
         </ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+
+<ion-content class="saude-background no-scroll" padding>
     <ion-card-content>
         <button [navPush]="login">Login</button>
+        <button [navPush]="landing">Landing</button>
         <button [navPush]="exams">Exams</button>
     </ion-card-content>
 </ion-content>

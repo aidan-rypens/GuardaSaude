@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>landing</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="saude-background no-scroll">
+
+    <!--<img src="../../assets/images/logo-transparant.png" class="landing-logo">-->
+    <div class="homenavbar">
+        <h1>Guarda<span>saúde</span></h1>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <!-- 1050x1350 -->
+                <img src="../../assets/images/slider/slide1.jpg" alt="" title="" />
+                <div class="slider-caption">
+                    <h2>Welcome Aidan!</h2>
+                    <span class="subtitle">There are <span style="color: #9EC00C;">4</span> new exams</span>
+                    <!--<p></p>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pages -->
+    <nav class="main-nav">
+        <ul>
+            <li>
+                <a [navPush]="exams"><img src="../../assets/images/icons/search.png" alt="" title="" /><span>EXAMS</span></a>
+            </li>
+            <li>
+                <a href="about.html"><img src="../../assets/images/icons/user.png" alt="" title="" /><span>ACCOUNT</span></a>
+            </li>
+            <li>
+                <a href="features.html"><img src="../../assets/images/icons/settings.png" alt="" title="" /><span>SETTINGS</span></a>
+            </li>
+        </ul>
+    </nav>
+
+</ion-content>

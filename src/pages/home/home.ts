@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { LandingPage } from '../landing/landing';
 import { AboutPage } from '../about/about';
 import { LoginPage } from '../login/login';
 import { ExamsPage } from '../exams/exams';
-import { ExamsDoctorPage } from '../exams-doctor/exams-doctor';
-import { ExamsPatientPage } from '../exams-patient/exams-patient';
 
 @Component({
   selector: 'page-home',
@@ -13,12 +12,16 @@ import { ExamsPatientPage } from '../exams-patient/exams-patient';
 })
 export class HomePage {
 
+  rootPage = HomePage;
+  landing = LandingPage;
   about = AboutPage;
   login = LoginPage;
   exams = ExamsPage;
-  examsDoctor = ExamsDoctorPage;
-  examsPatient = ExamsPatientPage;
 
   constructor(public navCtrl: NavController) {
+  }
+
+  openPage(p) {
+    this.rootPage = p;
   }
 }
