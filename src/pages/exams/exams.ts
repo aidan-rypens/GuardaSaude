@@ -29,6 +29,6 @@ export class ExamsPage {
     this.userRoles = this.authService.getCurrentUserRoles();
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad() { 
   }
 }

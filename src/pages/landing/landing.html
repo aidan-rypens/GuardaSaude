@@ -1,11 +1,15 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>landing</ion-title>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            Guarda Saude
+        </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="saude-background no-scroll">
-
     <!--<img src="../../assets/images/logo-transparant.png" class="landing-logo">-->
     <div class="homenavbar">
         <h1>Guarda<span>saúde</span></h1>
@@ -27,13 +31,13 @@
     <nav class="main-nav">
         <ul>
             <li>
-                <a [navPush]="exams"><img src="../../assets/images/icons/search.png" alt="" title="" /><span>EXAMS</span></a>
+                <a (click)='openPage(exams)'><img src="../../assets/images/icons/search.png " alt="" title="" /><span>EXAMS</span></a>
             </li>
             <li>
-                <a href="about.html"><img src="../../assets/images/icons/user.png" alt="" title="" /><span>ACCOUNT</span></a>
+                <a><img src="../../assets/images/icons/user.png" alt="" title="" /><span>ACCOUNT</span></a>
             </li>
             <li>
-                <a href="features.html"><img src="../../assets/images/icons/settings.png" alt="" title="" /><span>SETTINGS</span></a>
+                <a><img src="../../assets/images/icons/settings.png" alt="" title="" /><span>SETTINGS</span></a>
             </li>
         </ul>
     </nav>

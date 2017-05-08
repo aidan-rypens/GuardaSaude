@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { Exam } from '../../domain/exam';
 import { environment } from '../../environments/environment';
+import { saudeConfig } from '../../configurations/saudeConfig';
 
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
@@ -27,7 +28,7 @@ export class ExamsDoctorPage {
   }
 
   loadExams() {
-    this.examService.listExams(this.currentUser.userName, this.currentUser.token, environment.role_health_professional).subscribe(
+    this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_health_professional).subscribe(
       response => {
         this.exams = response.rows;
       } 
@@ -36,6 +37,12 @@ export class ExamsDoctorPage {
 
   ionViewDidLoad() {
     this.loadExams();
+  }
+
+  getExamStatusColor(status: string) {
+    let color = this.examService.getExamStatusColor(status);
+
+    return color;
   }
 
 }

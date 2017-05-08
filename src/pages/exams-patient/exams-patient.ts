@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams } from 'ionic-angular';
 
 import { Exam } from '../../domain/exam';
 import { environment } from '../../environments/environment';
+import { saudeConfig } from '../../configurations/saudeConfig';
 
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
+import { ExamsDetail } from '../exams-detail/exams-detail';
+
 
 /**
  * Generated class for the ExamsPatient page.
@@ -22,15 +25,15 @@ export class ExamsPatientPage {
   private currentUser: any;
   private exams: Exam[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
+  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
     this.currentUser = this.authService.getTokenCurrentUser();
   }
 
   loadExams() {
-    this.examService.listExams(this.currentUser.userName, this.currentUser.token, environment.role_patient).subscribe(
+    this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_patient).subscribe(
       response => {
         this.exams = response.rows;
-      }
+      } 
     );
   }
 
@@ -38,4 +41,12 @@ export class ExamsPatientPage {
     this.loadExams();
   }
 
+  getExamStatusColor(status: string) {
+    let border = this.examService.getExamStatusColor(status.toLowerCase());
+    return border;
+  }
+
+  viewExamDetail() {
+    this.appCtrl.getRootNav().push(ExamsDetail);
+  }
 }

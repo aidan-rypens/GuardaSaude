@@ -9,40 +9,16 @@
 
     <ion-content class="saude-menu no-scroll">
         <ion-list no-lines>
-            <ion-item>
-                <ion-grid>
+            <ion-item *ngFor="let p of pages">
+                <ion-grid menuClose (click)="openPage(p)">
                     <ion-row>
-                        <ion-col col-2 class="saude-menu-left-col"><img src="../assets/images/icons/bus.png"></ion-col>
-                        <ion-col col-10>Home</ion-col>
+                        <ion-col col-2 class="saude-menu-left-col"><img src="{{p.iconUrl}}"></ion-col>
+                        <ion-col col-10 class="saude-menu-right-col">{{p.title}}</ion-col>
                     </ion-row>
                 </ion-grid>
             </ion-item>
-            <ion-item>
-                <ion-grid>
-                    <ion-row>
-                        <ion-col col-2 class="saude-menu-left-col"><img src="../assets/images/icons/bus.png"></ion-col>
-                        <ion-col col-10>Exams</ion-col>
-                    </ion-row>
-                </ion-grid>
-            </ion-item>
-
-            <!--
-            <button menu-close ion-item *ngFor="let p of pages " (click)="openPage(p) ">
-                
-                <ion-grid>
-                    <ion-row>
-                        <ion-col>
-                            <img src="{{p.iconUrl}}">
-                        </ion-col>
-                        <ion-col class="saude-menu-text">
-                            {{p.title}}
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
-            </button>
-            -->
         </ion-list>
     </ion-content>
 </ion-menu>
 
-<ion-nav [root]="rootPage " #content swipeBackEnabled="false "></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

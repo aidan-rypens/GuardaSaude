@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 
 import { AuthService } from 'auth';
 import { environment } from '../environments/environment';
+import { saudeConfig } from '../configurations/saudeConfig';
 
 @Injectable()
 export class ExamService {
@@ -16,6 +17,20 @@ export class ExamService {
         return this.http.get(environment.baseApi + environment.listExamsUrl + 'user=' + username + '&token=' + token + '&accessRole' + accessRole)
         .map(this.handleRequest)
         .catch(this.handleError);
+    }
+
+    getExamStatusColor(status: string) {
+        if (status=="w") {
+            return saudeConfig.status_waiting_color
+        };
+
+        if (status=="f") {
+            return saudeConfig.status_finished_color
+        };
+
+        console.log(status);
+
+        return saudeConfig.status_unknown_color;
     }
 
     private handleRequest(res: Response) {

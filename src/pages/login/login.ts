@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
+import { LandingPage } from '../../pages/landing/landing';
 
 /**
  * Generated class for the Login page.
@@ -33,12 +34,12 @@ export class LoginPage {
       response => {
         if (response) {
           console.log('Login: OK');
+          this.navCtrl.setRoot(LandingPage);
         } else {
           console.log('Login: Failed');
         }
       }
     )
-
   }
 
   ionViewDidLoad() {

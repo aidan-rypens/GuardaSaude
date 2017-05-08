@@ -3,7 +3,8 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { LandingPage } from '../pages/landing/landing';
 import { ExamsPage } from '../pages/exams/exams';
 
 @Component({
@@ -12,7 +13,7 @@ import { ExamsPage } from '../pages/exams/exams';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
 
   pages: Array<{title: string, iconUrl: any, component: any}>;
 
@@ -25,7 +26,8 @@ export class MyApp {
     });
 
     this.pages = [
-      { title: 'Home', iconUrl:'../assets/images/icons/home.png', component: HomePage },
+      { title: 'Login', iconUrl:'../assets/images/icons/home.png', component: LoginPage },
+      { title: 'Home', iconUrl:'../assets/images/icons/home.png', component: LandingPage },
       { title: 'Exams', iconUrl:'../assets/images/icons/home.png', component: ExamsPage }
     ];
   }
@@ -33,6 +35,4 @@ export class MyApp {
   openPage(page) {
     this.nav.setRoot(page.component);
   }
-
 }
-

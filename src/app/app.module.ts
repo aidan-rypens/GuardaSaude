@@ -15,6 +15,7 @@ import { LandingPage } from '../pages/landing/landing';
 import { ExamsDoctorPage } from '../pages/exams-doctor/exams-doctor';
 import { ExamsPatientPage } from '../pages/exams-patient/exams-patient';
 import { ExamsPage } from '../pages/exams/exams';
+import { ExamsDetail } from '../pages/exams-detail/exams-detail';
 
 // Services
 import { AuthService } from '../services/auth.service';
@@ -29,6 +30,7 @@ import { ExamService } from '../services/exam.service';
     ExamsDoctorPage,
     ExamsPatientPage,
     ExamsPage,
+    ExamsDetail,
     LandingPage
   ],
   imports: [
@@ -45,6 +47,7 @@ import { ExamService } from '../services/exam.service';
     ExamsDoctorPage,
     ExamsPatientPage,
     ExamsPage,
+    ExamsDetail,
     LandingPage
   ],
   providers: [
