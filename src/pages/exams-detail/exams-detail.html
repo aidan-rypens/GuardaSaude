@@ -5,11 +5,59 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
-    </ion-navbar>
-
+  <ion-navbar>
+    <ion-title>Exam Details</ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content class="saude-background no-scroll" padding>
+  <ion-card [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h2 class="card-exam">Exame <span class="card-exam-id">{{exam.identification}}</span></h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h2 class="card-exam-subtitle">{{exam.serviceName}}</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-left" col-4>
+            {{exam.identification}}
+          </ion-col>
+          <ion-col class="col-right" col-8>
+            <ion-icon class="icon-card" ios="ios-medkit" md="md-medkit"></ion-icon>
+            {{exam.clinicName}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-left" col-4>
+            <!--<ion-icon class="icon-card-planning" ios="ios-time" md="md-time"></ion-icon>-->
+            {{exam.referringPhysicianName}}
+          </ion-col>
+          <ion-col class="col-right col-right-center" col-8>
+            <ion-icon class="icon-card" ios="ios-person" md="md-person"></ion-icon>
+            {{exam.patient}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-left" col-4>
+            <div>
+              {{exam.status}}
+            </div>
+          </ion-col>
+          <ion-col class="col-right" col-8>
+            <ion-icon class="icon-card" ios="ios-calendar" md="md-calendar"></ion-icon>
+            {{exam.executionDate}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
 
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

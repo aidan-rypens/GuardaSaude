@@ -21,6 +21,14 @@ import { ExamsDetail } from '../pages/exams-detail/exams-detail';
 import { AuthService } from '../services/auth.service';
 import { ExamService } from '../services/exam.service';
 
+// External Components
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { Dialogs } from '@ionic-native/dialogs';
+import { GalleryModal } from 'ionic-gallery-modal';
+import { ZoomableImage } from 'ionic-gallery-modal';
+
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,12 +39,15 @@ import { ExamService } from '../services/exam.service';
     ExamsPatientPage,
     ExamsPage,
     ExamsDetail,
-    LandingPage
+    LandingPage,
+    PdfViewerComponent,
+    GalleryModal,
+    ZoomableImage,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp, {tabsPlacement: 'top'})
+    IonicModule.forRoot(MyApp, { tabsPlacement: 'top' })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,14 +59,16 @@ import { ExamService } from '../services/exam.service';
     ExamsPatientPage,
     ExamsPage,
     ExamsDetail,
-    LandingPage
+    LandingPage,
+    GalleryModal
   ],
   providers: [
     AuthService,
     ExamService,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Dialogs,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

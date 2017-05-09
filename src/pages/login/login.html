@@ -19,15 +19,11 @@
                 <form id="LoginForm" method="post">
                     <input [(ngModel)]="model.email" type="text" name="Username" value="" class="form_input required" placeholder="Usuario ou Email" />
                     <input [(ngModel)]="model.password" type="password" name="Password" value="" class="form_input required" placeholder="Senha" />
-                    <div class="forgot_pass"><a href="#" data-popup=".popup-forgot" class="open-popup">Forgot Password?</a></div>
+                    <div class="forgot_pass">
+                        <a (click)='onForgotPasswordClick()'>Forgot Password?</a>
+                    </div>
                     <input (click)='onLoginClick();' type="submit" name="submit" class="form_submit" id="submit" value="SIGN IN" />
                 </form>
-                <!--
-                <div class="signup_bottom">
-                    <p>Don't have an account?</p>
-                    <a href="#" data-popup=".popup-signup" class="open-popup">SIGN UP</a>
-                </div>
-                -->
             </div>
         </div>
     </div>

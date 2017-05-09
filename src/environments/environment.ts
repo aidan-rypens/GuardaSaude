@@ -4,4 +4,5 @@ export const environment = {
   baseApi: 'https://www.guardasaude.com.br/mobile/',
   loginUrl: 'authenticateUser?',
   listExamsUrl: 'listExams?',
+  getExamImageUrl: 'getExamImage?'
 };

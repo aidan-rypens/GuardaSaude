@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import { LandingPage } from '../../pages/landing/landing';
 
+import { Dialogs } from '@ionic-native/dialogs';
+
 /**
  * Generated class for the Login page.
  *
@@ -15,7 +17,7 @@ import { LandingPage } from '../../pages/landing/landing';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs) {}
 
   private model: any = {};
   private loginResult: any = {};
@@ -40,6 +42,10 @@ export class LoginPage {
         }
       }
     )
+  }
+
+  onForgotPasswordClick() {
+    this.dialogs.prompt('Enter your email', 'Password Recovery');;
   }
 
   ionViewDidLoad() {

@@ -9,13 +9,13 @@ border-bottom: 5px #59cf84 solid
 </ion-header>
 
 <ion-content class="saude-background no-scroll" padding>
-    <ion-card (click)="viewExamDetail()" [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards" *ngFor="let exam of exams">
+    <ion-card (click)="viewExamDetail(exam)" [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards" *ngFor="let exam of exams">
         <ion-card-content>
             <ion-row>
                 <ion-col class="col-left" col-5>
                     {{exam.identification}}
                 </ion-col>
-                <ion-col class="col-right" col-7>
+                <ion-col class="col-left" col-7>
                     <ion-icon class="icon-card" ios="ios-medkit" md="md-medkit"></ion-icon>
                     {{exam.clinicName}}
                 </ion-col>

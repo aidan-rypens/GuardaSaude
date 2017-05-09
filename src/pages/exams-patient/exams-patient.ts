@@ -33,7 +33,7 @@ export class ExamsPatientPage {
     this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_patient).subscribe(
       response => {
         this.exams = response.rows;
-      } 
+      }
     );
   }
 
@@ -46,7 +46,9 @@ export class ExamsPatientPage {
     return border;
   }
 
-  viewExamDetail() {
-    this.appCtrl.getRootNav().push(ExamsDetail);
+  viewExamDetail(exam: Exam) {
+    this.appCtrl.getRootNav().push(ExamsDetail, {
+      "exam": exam
+    });
   }
 }
