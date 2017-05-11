@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
 import { AuthService } from '../../services/auth.service';
+import { ClientConfigService } from '../../services/clientconfig.service';
+
 import { LandingPage } from '../../pages/landing/landing';
 
 import { Dialogs } from '@ionic-native/dialogs';

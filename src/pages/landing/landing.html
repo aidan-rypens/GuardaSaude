@@ -1,45 +1,42 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
+  <ion-navbar>
+    <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>
-            Guarda Saude
-        </ion-title>
-    </ion-navbar>
+    <ion-title>
+      Guarda Saude
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content class="saude-background no-scroll">
-    <!--<img src="../../assets/images/logo-transparant.png" class="landing-logo">-->
-    <div class="homenavbar">
-        <h1>Guarda<span>saúde</span></h1>
+  <!--<img src="../../assets/images/logo-transparant.png" class="landing-logo">-->
+  <div class="homenavbar">
+    <h1>Guarda<span>saúde</span></h1>
+  </div>
+  <div class="swiper-container" style="border-bottom-left-radius: 100% 50%;">
+    <div class="swiper-slide">
+      <!-- 1050x1350 -->
+      <img src="../../assets/images/slider/slide1.jpg" alt="" title="" />
+      <div class="slider-caption">
+        <h2>Welcome Aidan!</h2>
+        <span class="subtitle">There are <span style="color: #9EC00C;">4</span> new exams</span>
+        <!--<p></p>-->
+      </div>
     </div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <!-- 1050x1350 -->
-                <img src="../../assets/images/slider/slide1.jpg" alt="" title="" />
-                <div class="slider-caption">
-                    <h2>Welcome Aidan!</h2>
-                    <span class="subtitle">There are <span style="color: #9EC00C;">4</span> new exams</span>
-                    <!--<p></p>-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Pages -->
-    <nav class="main-nav">
-        <ul>
-            <li>
-                <a (click)='openPage(exams)'><img src="../../assets/images/icons/search.png " alt="" title="" /><span>EXAMS</span></a>
-            </li>
-            <li>
-                <a><img src="../../assets/images/icons/user.png" alt="" title="" /><span>ACCOUNT</span></a>
-            </li>
-            <li>
-                <a><img src="../../assets/images/icons/settings.png" alt="" title="" /><span>SETTINGS</span></a>
-            </li>
-        </ul>
-    </nav>
-
+  </div>
+  <!-- Pages -->
+  <nav class="main-nav">
+    <ul>
+      <li>
+        <a (click)='openPage(exams)'><img src="../../assets/images/icons/search.png " /><span>EXAMS</span></a>
+      </li>
+      <li>
+        <a><img src="../../assets/images/icons/user.png" alt="" title="" /><span>ACCOUNT</span></a>
+      </li>
+      <li>
+        <a (click)='openPage(settings)'><img src="../../assets/images/icons/settings.png" /><span>SETTINGS</span></a>
+      </li>
+    </ul>
+  </nav>
 </ion-content>

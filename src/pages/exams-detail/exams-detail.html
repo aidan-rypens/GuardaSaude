@@ -55,7 +55,10 @@
           </ion-col>
         </ion-row>
         <ion-row>
-
+          <img (click)="openGallery(i)" class="exam-image-thumb" *ngFor="let examImage of examImages; let i = index" [src]="examImages[i].documentValue">
+        </ion-row>
+        <ion-row>
+          <button ion-button (click)="openExamPdf()">View PDF</button>
         </ion-row>
       </ion-grid>
     </ion-card-content>

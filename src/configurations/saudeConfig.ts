@@ -4,5 +4,10 @@ export const saudeConfig = {
   status_ready_color: '#59cf84',
   status_finished_color: '#59cf84',
   status_waiting_color: "#e2c319",
-  status_unknown_color: 'black'
+  status_unknown_color: 'black',
+
+  default_setting_language: 'English',
+  default_setting_new_exam: false,
+  default_setting_new_image: false,
+  default_setting_new_document: false
 };

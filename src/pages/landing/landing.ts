@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, NavController, NavParams } from 'ionic-angular';
 import { ExamsPage } from '../exams/exams';
 import { LoginPage } from '../login/login';
+import { SettingsPage } from '../settings/settings';
 
 /**
  * Generated class for the Landing page.
@@ -16,6 +17,7 @@ import { LoginPage } from '../login/login';
 export class LandingPage {
   exams = ExamsPage;
   login = LoginPage;
+  settings = SettingsPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -24,6 +26,10 @@ export class LandingPage {
   }
 
   openPage(page) {
-    this.navCtrl.setRoot(page);
+    if (page == this.settings) {
+      this.navCtrl.push(page);
+    } else {
+      this.navCtrl.setRoot(page);
+    }
   }
 }

@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { ModalController, NavController, NavParams } from 'ionic-angular';
+import { App, ModalController, NavController, NavParams } from 'ionic-angular';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
 import { GalleryModal } from 'ionic-gallery-modal';
 import { ZoomableImage } from 'ionic-gallery-modal';
 
+import { ExamsPdf } from './../exams-pdf/exams-pdf';
+
 import { Exam } from '../../domain/exam';
+import { ExamImg } from "../../domain/examImg";
+
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
-
 
 /**
  * Generated class for the ExamsDetail page.
@@ -23,30 +26,23 @@ import { AuthService } from '../../services/auth.service';
 export class ExamsDetail {
 
   private exam: Exam;
-  private photos: any;
+  private examImages: ExamImg[];
   private currentUser: any;
+  private modalPhotos: any[];
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
+  constructor(public appCtrl: App, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
     this.exam = navParams.get("exam");
     this.currentUser = this.authService.getTokenCurrentUser();
+    this.examImages = [];
+    this.modalPhotos = [];
+
     console.log(this.exam);
   }
 
   ionViewDidLoad() {
-
-    /*
-    this.photos = [
-      { "url": "../../assets/images/slider/slide1.jpg" }
-    ]
-    
-    let modal = this.modalCtrl.create(GalleryModal, {
-      photos: this.photos
-    });
-    */
-
-    //modal.present();
-
-    this.getExamImages();
+    for (let i = 0; i < this.exam.images.length; i++) {
+      this.getExamImages(this.exam.images[i].examIdentification, this.exam.images[i].imageIdentification);
+    }
   }
 
   getExamStatusColor(status: string) {
@@ -54,12 +50,29 @@ export class ExamsDetail {
     return border;
   }
 
-  getExamImages() {
-    this.examService.getExamImage(this.currentUser.userName, this.currentUser.token, 'GKS0004', 21217).subscribe(
+  getExamImages(exid: string, edid: number) {
+    this.examService.getExamImage(this.currentUser.userName, this.currentUser.token, exid, edid).subscribe(
       response => {
-        this.photos = response.rows;
-        console.log(this.photos);
+        if (response.result == "success") {
+        }
+        response.documentValue = "data:image/jpg;base64," + response.documentValue;
+        this.examImages.push(response);
+        this.modalPhotos.push({ "url": response.documentValue });
       }
     );
+  }
+
+  openGallery(i: number) {
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.modalPhotos,
+      index: i
+    });
+    modal.present();
+  }
+
+  openExamPdf() {
+    this.appCtrl.getRootNav().push(ExamsPdf, {
+      "exam": this.exam
+    });
   }
 }

@@ -15,7 +15,12 @@ import { Exam } from '../../domain/exam';
 })
 export class ExamsPdf {
 
+  private exam: Exam;
+  //private pdfDocument
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.exam = navParams.get("exam");
+    console.log(this.exam);
   }
 
   ionViewDidLoad() {

@@ -16,17 +16,19 @@ import { ExamsDoctorPage } from '../pages/exams-doctor/exams-doctor';
 import { ExamsPatientPage } from '../pages/exams-patient/exams-patient';
 import { ExamsPage } from '../pages/exams/exams';
 import { ExamsDetail } from '../pages/exams-detail/exams-detail';
+import { ExamsPdf } from '../pages/exams-pdf/exams-pdf';
+import { SettingsPage } from '../pages/settings/settings';
 
 // Services
 import { AuthService } from '../services/auth.service';
 import { ExamService } from '../services/exam.service';
+import { ClientConfigService } from '../services/clientconfig.service';
 
 // External Components
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { Dialogs } from '@ionic-native/dialogs';
 import { GalleryModal } from 'ionic-gallery-modal';
 import { ZoomableImage } from 'ionic-gallery-modal';
-
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { ZoomableImage } from 'ionic-gallery-modal';
     ExamsPage,
     ExamsDetail,
     LandingPage,
+    ExamsPdf,
+    SettingsPage,
     PdfViewerComponent,
     GalleryModal,
     ZoomableImage,
@@ -60,11 +64,14 @@ import { ZoomableImage } from 'ionic-gallery-modal';
     ExamsPage,
     ExamsDetail,
     LandingPage,
+    SettingsPage,
+    ExamsPdf,
     GalleryModal
   ],
   providers: [
     AuthService,
     ExamService,
+    ClientConfigService,
     StatusBar,
     SplashScreen,
     Dialogs,
