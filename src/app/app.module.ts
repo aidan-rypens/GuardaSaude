@@ -3,8 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 
 // Pages
 import { MyApp } from './app.component';
@@ -29,6 +28,14 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { Dialogs } from '@ionic-native/dialogs';
 import { GalleryModal } from 'ionic-gallery-modal';
 import { ZoomableImage } from 'ionic-gallery-modal';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: Http) {
+  return new TranslateHttpLoader(http, "../assets/translations/", ".json");
+}
 
 
 @NgModule({
@@ -51,6 +58,13 @@ import { ZoomableImage } from 'ionic-gallery-modal';
   imports: [
     BrowserModule,
     HttpModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [Http]
+      }
+    }),
     IonicModule.forRoot(MyApp, { tabsPlacement: 'top' })
   ],
   bootstrap: [IonicApp],

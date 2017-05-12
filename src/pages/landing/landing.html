@@ -19,8 +19,9 @@
       <!-- 1050x1350 -->
       <img src="../../assets/images/slider/slide1.jpg" alt="" title="" />
       <div class="slider-caption">
-        <h2>Welcome Aidan!</h2>
-        <span class="subtitle">There are <span style="color: #9EC00C;">4</span> new exams</span>
+        <h2>{{ 'LANDING.WELCOME' | translate }} Aidan!</h2>
+        <span class="subtitle">{{ 'LANDING.INFO' | translate }} <span style="color: #9EC00C;">4</span> {{ 'LANDING.INFO2'
+        | translate }}</span>
         <!--<p></p>-->
       </div>
     </div>
@@ -29,13 +30,13 @@
   <nav class="main-nav">
     <ul>
       <li>
-        <a (click)='openPage(exams)'><img src="../../assets/images/icons/search.png " /><span>EXAMS</span></a>
+        <a (click)='openPage(exams)'><img src="../../assets/images/icons/search.png " /><span>{{ 'LANDING.EXAMS' | translate }}</span></a>
       </li>
       <li>
-        <a><img src="../../assets/images/icons/user.png" alt="" title="" /><span>ACCOUNT</span></a>
+        <a><img src="../../assets/images/icons/user.png" alt="" title="" /><span>{{ 'LANDING.ACCOUNT' | translate }}</span></a>
       </li>
       <li>
-        <a (click)='openPage(settings)'><img src="../../assets/images/icons/settings.png" /><span>SETTINGS</span></a>
+        <a (click)='openPage(settings)'><img src="../../assets/images/icons/settings.png" /><span>{{ 'LANDING.SETTINGS' | translate }}</span></a>
       </li>
     </ul>
   </nav>

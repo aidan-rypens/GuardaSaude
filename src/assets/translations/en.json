@@ -1,0 +1,40 @@
+{
+  "LOGIN": {
+    "TITLE": "Login",
+    "USER": "Username or Email",
+    "PASSWORD": "Password",
+    "FORGOT": "Forgot Password?",
+    "SIGNIN": "SIGN IN"
+  },
+  "LANDING": {
+    "WELCOME": "Welcome",
+    "INFO": "There are",
+    "INFO2": "new exams",
+    "EXAMS": "EXAMS",
+    "ACCOUNT": "ACCOUNT",
+    "SETTINGS": "SETTINGS"
+  },
+  "SETTINGS": {
+    "SETTINGS": "Settings",
+    "LANGUAGE": "Language",
+    "CHOOSE": "Choose...",
+    "NOTIFICATIONS": "Notifications",
+    "NEWEXAMS": "New Exams",
+    "NEWIMAGES": "New Images",
+    "NEWDOCUMENTS": "New Documents",
+    "SUPPORT": "Support"
+  },
+  "EXAMS": {
+    "EXAMS": "Exams",
+    "DOCTOR": "Doctor",
+    "PATIENT": "Patient",
+    "EXAM": "Exam",
+    "EXAMDETAIL": "Exam Details",
+    "VIEWPDF": "View PDF"
+  },
+  "MENU": {
+    "LOGIN": "Login",
+    "HOME": "Home",
+    "EXAMS": "Exams"
+  }
+}

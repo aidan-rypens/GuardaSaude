@@ -5,7 +5,6 @@ import { AuthService } from '../../services/auth.service';
 import { ClientConfigService } from '../../services/clientconfig.service';
 
 import { LandingPage } from '../../pages/landing/landing';
-
 import { Dialogs } from '@ionic-native/dialogs';
 
 /**
@@ -20,7 +19,9 @@ import { Dialogs } from '@ionic-native/dialogs';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs) {
+
+  }
 
   private model: any = {};
   private loginResult: any = {};
@@ -30,8 +31,8 @@ export class LoginPage {
 
   onLoginClick() {
     // For testing
-    this.email='ZG9jdG9y';
-    this.password='dGVzdGU=';
+    this.email = 'ZG9jdG9y';
+    this.password = 'dGVzdGU=';
     this.model.email = this.email;
     this.model.password = this.password;
 

@@ -1,0 +1,40 @@
+{
+  "LOGIN": {
+    "TITLE": "Login",
+    "USER": "Nome de usuário ou e-mail",
+    "PASSWORD": "Senha",
+    "FORGOT": "Esqueceu a senha?",
+    "SIGNIN": "ASSINAR"
+  },
+  "LANDING": {
+    "WELCOME": "Bem Vindo",
+    "INFO": "Tem",
+    "INFO2": "novos exames",
+    "EXAMS": "EXAMES",
+    "ACCOUNT": "CONTA",
+    "SETTINGS": "DEFINIÇÕES"
+  },
+  "SETTINGS": {
+    "SETTINGS": "Definições",
+    "LANGUAGE": "Idioma",
+    "CHOOSE": "Escolha...",
+    "NOTIFICATIONS": "Notificações",
+    "NEWEXAMS": "Novos Exames",
+    "NEWIMAGES": "Novas Imagens",
+    "NEWDOCUMENTS": "Novos Documentos",
+    "SUPPORT": "Suporte"
+  },
+  "EXAMS": {
+    "EXAMS": "Exames",
+    "DOCTOR": "Doutor",
+    "PATIENT": "Paciente",
+    "EXAM": "Exame",
+    "EXAMDETAIL": "Detalhes do Exame",
+    "VIEWPDF": "Visualizar PDF"
+  },
+  "MENU": {
+    "LOGIN": "Login",
+    "HOME": "Home",
+    "EXAMS": "Exames"
+  }
+}
