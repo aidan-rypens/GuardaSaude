@@ -1,7 +1,7 @@
 {
   "LOGIN": {
     "TITLE": "Login",
-    "USER": "Username or Email",
+    "USER": "Username, Email or Protocol",
     "PASSWORD": "Password",
     "FORGOT": "Forgot Password?",
     "SIGNIN": "SIGN IN"

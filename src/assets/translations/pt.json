@@ -1,21 +1,21 @@
 {
   "LOGIN": {
     "TITLE": "Login",
-    "USER": "Nome de usuário ou e-mail",
+    "USER": "Usuário, Email ou Protocolo",
     "PASSWORD": "Senha",
     "FORGOT": "Esqueceu a senha?",
-    "SIGNIN": "ASSINAR"
+    "SIGNIN": "ACESSAR"
   },
   "LANDING": {
     "WELCOME": "Bem Vindo",
-    "INFO": "Tem",
+    "INFO": "Você tem",
     "INFO2": "novos exames",
     "EXAMS": "EXAMES",
     "ACCOUNT": "CONTA",
-    "SETTINGS": "DEFINIÇÕES"
+    "SETTINGS": "CONFIGURAÇÕES"
   },
   "SETTINGS": {
-    "SETTINGS": "Definições",
+    "SETTINGS": "Configurações",
     "LANGUAGE": "Idioma",
     "CHOOSE": "Escolha...",
     "NOTIFICATIONS": "Notificações",
@@ -26,7 +26,7 @@
   },
   "EXAMS": {
     "EXAMS": "Exames",
-    "DOCTOR": "Doutor",
+    "DOCTOR": "Médico",
     "PATIENT": "Paciente",
     "EXAM": "Exame",
     "EXAMDETAIL": "Detalhes do Exame",
@@ -34,7 +34,7 @@
   },
   "MENU": {
     "LOGIN": "Login",
-    "HOME": "Home",
+    "HOME": "Início",
     "EXAMS": "Exames"
   }
 }

@@ -68,7 +68,12 @@ p {
 }
 
 .scroll-content {
-  overflow: hidden;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 .saude-background {
@@ -107,6 +112,12 @@ p {
 .icon-card {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.icon-card-col {
+  margin-top: 15px;
+  font-size: 50px;
+  text-align: center;
 }
 
 .icon-card-planning {
@@ -173,6 +184,21 @@ p {
   margin-right: 5px;
 }
 
+.saude-button {
+  width: 100%;
+  padding: 12px 0;
+  margin: 10px 0 0 0;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background-color: $saudeGreenLight;
+  color: $saudeWhite;
+  border: 2px $saudeGreenLight solid;
+}
+
 #icon-link {
   margin-left: 85px;
 }
@@ -206,7 +232,6 @@ p {
 .exam-image-thumb-gallery {
   margin-bottom: 25px;
   margin-top: 25px;
-  background-color: gray;
 }
 
 

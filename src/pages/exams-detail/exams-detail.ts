@@ -35,8 +35,6 @@ export class ExamsDetail {
     this.currentUser = this.authService.getTokenCurrentUser();
     this.examImages = [];
     this.modalPhotos = [];
-
-    console.log(this.exam);
   }
 
   ionViewDidLoad() {
@@ -65,7 +63,7 @@ export class ExamsDetail {
   openGallery(i: number) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.modalPhotos,
-      index: i
+      initialSlide: i
     });
     modal.present();
   }

@@ -34,11 +34,9 @@ export class ClientConfigService {
         this.translate.setDefaultLang('en');
 
         if (this.clientConfig.selectedLanguage.toLowerCase().startsWith("e")) {
-            console.log("Engels");
             this.translate.use('en');
         }
         if (this.clientConfig.selectedLanguage.toLowerCase().startsWith("p")) {
-            console.log("Portugees");
             this.translate.use('pt');
         }
     }
