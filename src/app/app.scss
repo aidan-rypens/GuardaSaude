@@ -82,9 +82,10 @@ p {
 
 .saude-cards {
   background: $saudeGreenCards;
-  font-size: 15px;
-  color: $saudeWhite;
   border-bottom: 5px #59cf84 solid;
+  font-size: 16px;
+  font-weight: 400;
+  color: $saudeWhite;
 }
 
 .saude-cards-wrapper {
@@ -259,8 +260,9 @@ p {
 }
 
 .saude-popover button {
+  font-size: 14px;
+  font-weight: 400;
   color: $saudeWhite;
-  font-size: 15px;
 }
 
 .saude-popover ion-list-header {
