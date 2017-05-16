@@ -26,9 +26,6 @@ export class ExamService {
         if (status == "f") {
             return saudeConfig.status_finished_color
         };
-
-        console.log(status);
-
         return saudeConfig.status_unknown_color;
     }
 

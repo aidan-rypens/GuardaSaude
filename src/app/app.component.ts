@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { LandingPage } from '../pages/landing/landing';
+import { SettingsPage } from '../pages/settings/settings';
 import { ExamsPage } from '../pages/exams/exams';
 
 import { TranslateService } from '@ngx-translate/core';
@@ -30,9 +31,10 @@ export class MyApp {
     });
 
     this.pages = [
-      { title: 'Login', iconUrl: '../assets/images/icons/home.png', component: LoginPage },
       { title: 'Home', iconUrl: '../assets/images/icons/home.png', component: LandingPage },
-      { title: 'Exams', iconUrl: '../assets/images/icons/home.png', component: ExamsPage }
+      { title: 'Exams', iconUrl: '../assets/images/icons/search.png', component: ExamsPage },
+      { title: 'Account', iconUrl: '../assets/images/icons/user.png', component: LandingPage },
+      { title: 'Settings', iconUrl: '../assets/images/icons/settings.png', component: SettingsPage }
     ];
   }
 

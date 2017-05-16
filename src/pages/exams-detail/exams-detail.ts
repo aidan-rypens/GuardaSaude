@@ -6,6 +6,7 @@ import { GalleryModal } from 'ionic-gallery-modal';
 import { ZoomableImage } from 'ionic-gallery-modal';
 
 import { ExamsPdf } from './../exams-pdf/exams-pdf';
+import { ExamsPacs } from '../../pages/exams-pacs/exams-pacs';
 
 import { Exam } from '../../domain/exam';
 import { ExamImg } from "../../domain/examImg";
@@ -29,12 +30,16 @@ export class ExamsDetail {
   private examImages: ExamImg[];
   private currentUser: any;
   private modalPhotos: any[];
+  private showImages: boolean;
 
   constructor(public appCtrl: App, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
     this.exam = navParams.get("exam");
     this.currentUser = this.authService.getTokenCurrentUser();
     this.examImages = [];
     this.modalPhotos = [];
+    this.showImages = false;
+
+    console.log(this.exam);
   }
 
   ionViewDidLoad() {
@@ -73,4 +78,19 @@ export class ExamsDetail {
       "exam": this.exam
     });
   }
+
+  clickShowImages() {
+    if (this.showImages) {
+      this.showImages = false;
+    } else {
+      this.showImages = true;
+    }
+  }
+
+  clickShowPdf() {
+  }
+  clickShowPax() {
+    this.appCtrl.getRootNav().push(ExamsPacs);
+  }
+
 }

@@ -20,15 +20,21 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: 'exams.html',
 })
 export class ExamsPage {
-  private userRoles: any;
+  private userRoles: String[];
+
+  private showPatient: boolean = false;
+  private showDoctor: boolean = false;
 
   Patient = ExamsPatientPage;
   Doctor = ExamsDoctorPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {
     this.userRoles = this.authService.getCurrentUserRoles();
-  }
-
-  ionViewDidLoad() { 
+    if (this.userRoles.some(x => x === "ROLE_PATIENT")) {
+      this.showPatient = true;
+    }
+    if (this.userRoles.some(x => x === "ROLE_HEALTH_PROFESSIONAL")) {
+      this.showDoctor = true;
+    }
   }
 }

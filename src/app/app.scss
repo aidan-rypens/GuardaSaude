@@ -82,11 +82,14 @@ p {
 
 .saude-cards {
   background: $saudeGreenCards;
-  font-size: 18px;
-  line-height: 25px;
-  font-weight: 300;
-  color: #fff;
+  font-size: 15px;
+  color: $saudeWhite;
   border-bottom: 5px #59cf84 solid;
+}
+
+.saude-cards-wrapper {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .col-header {
@@ -126,14 +129,14 @@ p {
 
 .saude-menu {
   background: #217458;
-  background: linear-gradient(to right, #1e3d3c, #33d691);
+  background: linear-gradient(to right, #1e3d3c, #217458);
   margin: 0;
 }
 
 .saude-menu ion-list {}
 
 .saude-menu ion-list ion-item {
-  background: linear-gradient(to right, #1d202d, #26d087);
+  background: linear-gradient(to right, #1d202d, #217458);
   padding-left: 0;
   margin-bottom: 1px;
   height: 45px;
@@ -150,20 +153,22 @@ p {
 }
 
 .saude-menu-right-col {
-  color: white;
   margin-top: 8px;
-  padding-left: 20px;
-  font-weight: 300;
-  color: #fff;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $saudeWhite;
 }
 
-.saude-menu img {
+.saude-menu-icons {
   display: block;
   margin: auto;
   margin-top: 5px;
   width: 25px;
   height: 25px;
 }
+
+.saude-manager-logo {}
 
 .saude-setting-item {
   background: $saudeWhite;
@@ -232,6 +237,48 @@ p {
 .exam-image-thumb-gallery {
   margin-bottom: 25px;
   margin-top: 25px;
+}
+
+.saude-text {
+  color: $saudeWhite;
+}
+
+.saude-fab-attachments {
+  background: $saudeGreenLight;
+}
+
+.saude-pacs-viewer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.saude-sort-thumb {
+  width: 50%;
+  height: 50%;
+}
+
+.saude-popover button {
+  color: $saudeWhite;
+  font-size: 15px;
+}
+
+.saude-popover ion-list-header {
+  color: $saudeWhite;
+}
+
+.item-ios ion-thumbnail {
+  min-width: 25px;
+  min-height: 25px;
+  max-width: 25px;
+  max-height: 25px;
+}
+
+.item-ios ion-thumbnail img {
+  min-width: 25px;
+  min-height: 25px;
+  max-width: 25px;
+  max-height: 25px;
 }
 
 

@@ -7,8 +7,6 @@ import { HttpModule, Http } from '@angular/http';
 
 // Pages
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
 import { LandingPage } from '../pages/landing/landing';
 import { ExamsDoctorPage } from '../pages/exams-doctor/exams-doctor';
@@ -16,7 +14,9 @@ import { ExamsPatientPage } from '../pages/exams-patient/exams-patient';
 import { ExamsPage } from '../pages/exams/exams';
 import { ExamsDetail } from '../pages/exams-detail/exams-detail';
 import { ExamsPdf } from '../pages/exams-pdf/exams-pdf';
+import { ExamsPacs } from '../pages/exams-pacs/exams-pacs';
 import { SettingsPage } from '../pages/settings/settings';
+import { ExamsOrderPopover } from '../pages/exams-order-popover/exams-order-popover';
 
 // Services
 import { AuthService } from '../services/auth.service';
@@ -41,8 +41,6 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    AboutPage,
     LoginPage,
     ExamsDoctorPage,
     ExamsPatientPage,
@@ -50,7 +48,9 @@ export function HttpLoaderFactory(http: Http) {
     ExamsDetail,
     LandingPage,
     ExamsPdf,
+    ExamsPacs,
     SettingsPage,
+    ExamsOrderPopover,
     PdfViewerComponent,
     GalleryModal,
     ZoomableImage,
@@ -70,8 +70,6 @@ export function HttpLoaderFactory(http: Http) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    AboutPage,
     LoginPage,
     ExamsDoctorPage,
     ExamsPatientPage,
@@ -79,7 +77,9 @@ export function HttpLoaderFactory(http: Http) {
     ExamsDetail,
     LandingPage,
     SettingsPage,
+    ExamsOrderPopover,
     ExamsPdf,
+    ExamsPacs,
     GalleryModal
   ],
   providers: [

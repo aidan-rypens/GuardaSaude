@@ -1,7 +1,7 @@
 export interface Exam {
     clinicName: string,
     documents: any,
-    executionDate: any,
+    executionDate: Date,
     id: number,
     images: any,
     isEmergency: boolean,

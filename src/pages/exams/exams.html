@@ -4,21 +4,20 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-  <ion-navbar>
+<ion-header class="opaque">
+  <ion-navbar no-border-bottom>
     <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
       {{ 'EXAMS.EXAMS' | translate }}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="saude-background no-scroll">
-  <ion-tabs *ngIf="userRoles.length > 1">
-    <ion-tab [root]="Doctor" tabTitle="{{ 'EXAMS.DOCTOR' | translate }}" tabIcon="md-people"></ion-tab>
-    <ion-tab [root]="Patient" tabTitle="{{ 'EXAMS.PATIENT' | translate }}" tabIcon="md-medical"></ion-tab>
-    <ion-icon ios="ios-medical" md="md-medical"></ion-icon>
+<ion-content class="saude-background no-scroll">
+  <ion-tabs>
+    <ion-tab *ngIf="showDoctor" [root]="Doctor" tabTitle="{{ 'EXAMS.DOCTOR' | translate }}" tabIcon="md-people"></ion-tab>
+    <ion-tab *ngIf="showPatient" [root]="Patient" tabTitle="{{ 'EXAMS.PATIENT' | translate }}" tabIcon="md-medical"></ion-tab>
   </ion-tabs>
 </ion-content>

@@ -1,24 +1,25 @@
 <ion-menu [content]="content">
-    <ion-header>
-        <ion-toolbar class="no-scroll ">
-            <ion-title>
-                Menu
-            </ion-title>
-        </ion-toolbar>
-    </ion-header>
+  <ion-header>
+    <ion-toolbar class="no-scroll ">
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-    <ion-content class="saude-menu no-scroll">
-        <ion-list no-lines>
-            <ion-item *ngFor="let p of pages">
-                <ion-grid menuClose (click)="openPage(p)">
-                    <ion-row>
-                        <ion-col col-2 class="saude-menu-left-col"><img src="{{p.iconUrl}}"></ion-col>
-                        <ion-col col-10 class="saude-menu-right-col">{{p.title}}</ion-col>
-                    </ion-row>
-                </ion-grid>
-            </ion-item>
-        </ion-list>
-    </ion-content>
+  <ion-content class="saude-menu no-scroll">
+    <ion-list no-lines>
+      <ion-item *ngFor="let p of pages">
+        <ion-grid menuClose (click)="openPage(p)">
+          <ion-row>
+            <ion-col col-2 class="saude-menu-left-col"><img class="saude-menu-icons" src="{{p.iconUrl}}"></ion-col>
+            <ion-col col-10 class="saude-menu-right-col">{{p.title}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <!--<img class="saude-manager-logo" src="../assets/images/jupiter-logo.png">-->
+  </ion-content>
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

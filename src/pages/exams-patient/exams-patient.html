@@ -8,40 +8,57 @@ border-bottom: 5px #59cf84 solid
 <ion-header>
 </ion-header>
 
-<ion-content class="saude-background no-scroll" padding>
-  <ion-card (click)="viewExamDetail(exam)" [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards"
-    *ngFor="let exam of exams">
-    <ion-card-content>
-      <ion-row>
-        <ion-col class="col-left" col-4>
-          {{exam.identification}}
-        </ion-col>
-        <ion-col class="col-right" col-8>
-          <ion-icon class="icon-card" ios="ios-medkit" md="md-medkit"></ion-icon>
-          {{exam.clinicName}}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="col-left" col-4>
-          <!--<ion-icon class="icon-card-planning" ios="ios-time" md="md-time"></ion-icon>-->
-          {{exam.referringPhysicianName}}
-        </ion-col>
-        <ion-col class="col-right col-right" col-8>
-          <ion-icon class="icon-card" ios="ios-person" md="md-person"></ion-icon>
-          {{exam.patient}}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="col-left" col-4>
-          <div>
-            {{exam.serviceName}}
-          </div>
-        </ion-col>
-        <ion-col class="col-right" col-8>
-          <ion-icon class="icon-card" ios="ios-calendar" md="md-calendar"></ion-icon>
-          {{exam.executionDate}}
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
+<ion-content class="saude-background no-scroll">
+  <ion-row>
+    <ion-col col-10>
+      <ion-toolbar color="saudeBg">
+        <ion-searchbar placeholder="Search..." [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+        </ion-searchbar>
+      </ion-toolbar>
+    </ion-col>
+    <ion-col col-2>
+      <ion-buttons end>
+        <button ion-button color="light" clear (click)="presentPopover($event)">
+          <ion-icon name="options"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+
+  <div class="saude-cards-wrapper">
+    <ion-card (click)="viewExamDetail(exam)" [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards"
+      *ngFor="let exam of exams">
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="col-left" col-4>
+            {{exam.identification}}
+          </ion-col>
+          <ion-col class="col-right" col-8>
+            <ion-icon class="icon-card" ios="ios-medkit" md="md-medkit"></ion-icon>
+            {{exam.clinicName}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-left" col-4>
+            {{exam.referringPhysicianName}}
+          </ion-col>
+          <ion-col class="col-right col-right" col-8>
+            <ion-icon class="icon-card" ios="ios-person" md="md-person"></ion-icon>
+            {{exam.patient}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-left" col-4>
+            <div>
+              {{exam.serviceName}}
+            </div>
+          </ion-col>
+          <ion-col class="col-right" col-8>
+            <ion-icon class="icon-card" ios="ios-calendar" md="md-calendar"></ion-icon>
+            {{exam.executionDate}}
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

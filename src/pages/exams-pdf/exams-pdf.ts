@@ -24,7 +24,6 @@ export class ExamsPdf {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ExamsPdf');
   }
 
 }

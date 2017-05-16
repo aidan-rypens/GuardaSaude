@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams, PopoverController } from 'ionic-angular';
 
 import { Exam } from '../../domain/exam';
 import { environment } from '../../environments/environment';
@@ -7,6 +7,9 @@ import { saudeConfig } from '../../configurations/saudeConfig';
 
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
+import { ExamsDetail } from '../exams-detail/exams-detail';
+
+import { ExamsOrderPopover } from '../exams-order-popover/exams-order-popover';
 
 /**
  * Generated class for the ExamsDoctor page.
@@ -23,15 +26,16 @@ export class ExamsDoctorPage {
   private currentUser: any;
   private exams: Exam[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
+  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService, public popoverCtrl: PopoverController) {
     this.currentUser = this.authService.getTokenCurrentUser();
+
   }
 
   loadExams() {
     this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_health_professional).subscribe(
       response => {
         this.exams = response.rows;
-      } 
+      }
     );
   }
 
@@ -40,9 +44,24 @@ export class ExamsDoctorPage {
   }
 
   getExamStatusColor(status: string) {
-    let color = this.examService.getExamStatusColor(status);
-
-    return color;
+    let border = this.examService.getExamStatusColor(status.toLowerCase());
+    return border;
   }
 
+  viewExamDetail(exam: Exam) {
+    this.appCtrl.getRootNav().push(ExamsDetail, {
+      "exam": exam
+    });
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(ExamsOrderPopover);
+    popover.present({
+      ev: myEvent
+    });
+
+    popover.onDidDismiss((popoverData) => {
+      //console.log(popoverData);
+    })
+  }
 }
