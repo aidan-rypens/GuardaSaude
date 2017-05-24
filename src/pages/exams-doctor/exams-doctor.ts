@@ -7,9 +7,13 @@ import { saudeConfig } from '../../configurations/saudeConfig';
 
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
+import { OrderPopoverService } from '../../services/orderpopover.service';
+
 import { ExamsDetail } from '../exams-detail/exams-detail';
 
 import { ExamsOrderPopover } from '../exams-order-popover/exams-order-popover';
+import { ExamSearch } from '../../pipes/exam-search';
+import { ExamOrder } from '../../pipes/exam-order';
 
 /**
  * Generated class for the ExamsDoctor page.
@@ -25,16 +29,19 @@ export class ExamsDoctorPage {
 
   private currentUser: any;
   private exams: Exam[];
+  private searchQuery: string = '';
 
-  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService, public popoverCtrl: PopoverController) {
+  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams,
+    private examService: ExamService, private authService: AuthService,
+    public popoverCtrl: PopoverController, public orderPopoverService: OrderPopoverService) {
     this.currentUser = this.authService.getTokenCurrentUser();
-
   }
 
   loadExams() {
     this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_health_professional).subscribe(
       response => {
         this.exams = response.rows;
+        console.log(this.exams);
       }
     );
   }
@@ -63,5 +70,9 @@ export class ExamsDoctorPage {
     popover.onDidDismiss((popoverData) => {
       //console.log(popoverData);
     })
+  }
+
+  onInput(ev: any) {
+    this.searchQuery = ev.target.value;
   }
 }

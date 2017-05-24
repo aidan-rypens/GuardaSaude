@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 
+import { OrderPopoverService } from '../../services/orderpopover.service';
+
 /**
  * Generated class for the ExamsOrderPopover page.
  *
@@ -12,15 +14,11 @@ import { ViewController } from 'ionic-angular';
 })
 export class ExamsOrderPopover {
 
-  constructor(public viewCtrl: ViewController) {
+  constructor(public viewCtrl: ViewController, private orderPopoverService: OrderPopoverService) {
   }
 
   close() {
-    this.viewCtrl.dismiss("Hello");
-  }
-
-  hello() {
-    console.log("click...");
+    //this.viewCtrl.dismiss(this.orderById);
   }
 
 }

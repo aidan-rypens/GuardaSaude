@@ -134,7 +134,9 @@ p {
   margin: 0;
 }
 
-.saude-menu ion-list {}
+.saude-menu-toggle {
+  background: $saudeGreenCards;
+}
 
 .saude-menu ion-list ion-item {
   background: linear-gradient(to right, #1d202d, #217458);
@@ -168,8 +170,6 @@ p {
   width: 25px;
   height: 25px;
 }
-
-.saude-manager-logo {}
 
 .saude-setting-item {
   background: $saudeWhite;
@@ -267,16 +267,19 @@ p {
 
 .saude-popover ion-list-header {
   color: $saudeWhite;
+  background: $saudeBg;
 }
 
-.item-ios ion-thumbnail {
+.item-full-line {}
+
+.item ion-thumbnail {
   min-width: 25px;
   min-height: 25px;
   max-width: 25px;
   max-height: 25px;
 }
 
-.item-ios ion-thumbnail img {
+.item ion-thumbnail img {
   min-width: 25px;
   min-height: 25px;
   max-width: 25px;
@@ -441,7 +444,6 @@ h2.card-exam-subtitle {
 .sidebar-nav ul li img {
   display: inline-block;
   max-width: 8%;
-  float: left;
   background-color: #1d202d;
   padding: 4%;
 }
@@ -617,12 +619,6 @@ h2.card-exam-subtitle {
 .swiper-slide {
   width: 100%;
   text-align: left;
-}
-
-.swiper-slide img {
-  //width: 100%;
-  //display: block;
-  //opacity: 0.7;
 }
 
 .slider-caption {

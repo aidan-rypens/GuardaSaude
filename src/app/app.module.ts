@@ -22,6 +22,7 @@ import { ExamsOrderPopover } from '../pages/exams-order-popover/exams-order-popo
 import { AuthService } from '../services/auth.service';
 import { ExamService } from '../services/exam.service';
 import { ClientConfigService } from '../services/clientconfig.service';
+import { OrderPopoverService } from '../services/orderpopover.service';
 
 // External Components
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
@@ -30,6 +31,11 @@ import { GalleryModal } from 'ionic-gallery-modal';
 import { ZoomableImage } from 'ionic-gallery-modal';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+// Pipes
+import { ExamSearch } from '../pipes/exam-search';
+import { ExamOrder } from '../pipes/exam-order';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 
 // AoT requires an exported function for factories
@@ -54,10 +60,13 @@ export function HttpLoaderFactory(http: Http) {
     PdfViewerComponent,
     GalleryModal,
     ZoomableImage,
+    ExamSearch,
+    ExamOrder
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    Ng2OrderModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -86,6 +95,7 @@ export function HttpLoaderFactory(http: Http) {
     AuthService,
     ExamService,
     ClientConfigService,
+    OrderPopoverService,
     StatusBar,
     SplashScreen,
     Dialogs,
