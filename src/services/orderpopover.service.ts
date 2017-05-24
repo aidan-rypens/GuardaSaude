@@ -33,8 +33,5 @@ export class OrderPopoverService {
             this.iconThumbs[orderById] = this.sortTop;
             this.orderReverse = false;
         }
-
-        console.log(this.orderName);
-        console.log(this.orderReverse);
     }
 }

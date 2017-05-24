@@ -6,6 +6,7 @@ $saudeGreenCards: #16a086;
 $saudeGray: #A7B8A5;
 $saudeWhite: #FFFFFF;
 $saudeBg: #1d202d;
+$saudeEmergency: yellow;
 
 /*
 [Table of Contents]
@@ -91,6 +92,11 @@ p {
 .saude-cards-wrapper {
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.saude-cards-wrapper ion-col {
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .col-header {
@@ -284,6 +290,21 @@ p {
   min-height: 25px;
   max-width: 25px;
   max-height: 25px;
+}
+
+.saude-isEmergency-icon {
+  color: $saudeWhite;
+}
+
+.saude-emergency-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.saude-emergency-row p {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: $saudeEmergency;
 }
 
 

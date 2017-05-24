@@ -31,9 +31,7 @@ export class ExamsDoctorPage {
   private exams: Exam[];
   private searchQuery: string = '';
 
-  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams,
-    private examService: ExamService, private authService: AuthService,
-    public popoverCtrl: PopoverController, public orderPopoverService: OrderPopoverService) {
+  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService, public popoverCtrl: PopoverController, public orderPopoverService: OrderPopoverService) {
     this.currentUser = this.authService.getTokenCurrentUser();
   }
 
@@ -41,6 +39,16 @@ export class ExamsDoctorPage {
     this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_health_professional).subscribe(
       response => {
         this.exams = response.rows;
+
+        // Ordering seed
+        this.exams[0].patient = "Linda Tequila";
+        this.exams[1].patient = "Helen Mertel";
+        this.exams[2].patient = "Mattheus Fracht eagioam ieaogjim iaei giomaejagji amegji aemij";
+
+        //this.exams[0].identification = "A";
+        //this.exams[1].identification = "B";
+        //this.exams[2].identification = "C";
+
         console.log(this.exams);
       }
     );

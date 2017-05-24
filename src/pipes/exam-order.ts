@@ -18,17 +18,27 @@ export class ExamOrder implements PipeTransform {
   constructor(public orderPopoverService: OrderPopoverService) {
   }
 
-  transform(data: any[]) {
+  transform(value: any[], expression?: any, reverse?: boolean): any {
 
-    /*
-    if (this.orderPopoverService.orderById === 0) {
-      // a-z else z-a
-      if (this.orderPopoverService.iconThumbs[this.orderPopoverService.orderById].endsWith("sort-bottom")) {
-      } else {
-      }
+    console.log("Expression: " + expression);
+    //console.log("Reverse: " + reverse);
+
+
+    if (!value) {
+      return value;
     }
-    */
+    let array: any[] = value.sort((a: any, b: any): number => {
+      if (!expression) {
+        return a > b ? 1 : -1;
+      }
 
-    return data;
+      return a[expression] > b[expression] ? 1 : -1;
+    });
+
+    if (reverse) {
+      return array.reverse();
+    }
+
+    return array;
   }
 }
