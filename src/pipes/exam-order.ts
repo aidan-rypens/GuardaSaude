@@ -19,11 +19,6 @@ export class ExamOrder implements PipeTransform {
   }
 
   transform(value: any[], expression?: any, reverse?: boolean): any {
-
-    console.log("Expression: " + expression);
-    //console.log("Reverse: " + reverse);
-
-
     if (!value) {
       return value;
     }
@@ -38,7 +33,6 @@ export class ExamOrder implements PipeTransform {
     if (reverse) {
       return array.reverse();
     }
-
     return array;
   }
 }

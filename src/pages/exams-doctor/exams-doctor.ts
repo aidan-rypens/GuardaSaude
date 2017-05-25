@@ -14,6 +14,7 @@ import { ExamsDetail } from '../exams-detail/exams-detail';
 import { ExamsOrderPopover } from '../exams-order-popover/exams-order-popover';
 import { ExamSearch } from '../../pipes/exam-search';
 import { ExamOrder } from '../../pipes/exam-order';
+import { ExamDate } from '../../pipes/exam-date';
 
 /**
  * Generated class for the ExamsDoctor page.
@@ -39,17 +40,6 @@ export class ExamsDoctorPage {
     this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_health_professional).subscribe(
       response => {
         this.exams = response.rows;
-
-        // Ordering seed
-        this.exams[0].patient = "Linda Tequila";
-        this.exams[1].patient = "Helen Mertel";
-        this.exams[2].patient = "Mattheus Fracht eagioam ieaogjim iaei giomaejagji amegji aemij";
-
-        //this.exams[0].identification = "A";
-        //this.exams[1].identification = "B";
-        //this.exams[2].identification = "C";
-
-        console.log(this.exams);
       }
     );
   }

@@ -13,6 +13,7 @@ import { ExamImg } from "../../domain/examImg";
 
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
+import { ExamDate } from '../../pipes/exam-date';
 
 /**
  * Generated class for the ExamsDetail page.

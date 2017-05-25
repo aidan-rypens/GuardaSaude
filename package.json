@@ -4,6 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
+  "config": {
+    "ionic_copy": "./scripts/copy-custom-libs.js"
+  },
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
@@ -26,6 +29,7 @@
     "@ionic/storage": "2.0.1",
     "@ngx-translate/core": "^6.0.1",
     "@ngx-translate/http-loader": "0.0.3",
+    "font-awesome": "^4.7.0",
     "ionic-angular": "3.0.1",
     "ionic-gallery-modal": "0.0.9",
     "ionicons": "3.0.0",

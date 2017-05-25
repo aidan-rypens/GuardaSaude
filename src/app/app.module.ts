@@ -35,8 +35,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 // Pipes
 import { ExamSearch } from '../pipes/exam-search';
 import { ExamOrder } from '../pipes/exam-order';
-import { Ng2OrderModule } from 'ng2-order-pipe';
-
+import { ExamDate } from '../pipes/exam-date';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -61,12 +60,12 @@ export function HttpLoaderFactory(http: Http) {
     GalleryModal,
     ZoomableImage,
     ExamSearch,
-    ExamOrder
+    ExamOrder,
+    ExamDate
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    Ng2OrderModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

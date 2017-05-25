@@ -14,8 +14,7 @@ import { ExamsDetail } from '../exams-detail/exams-detail';
 import { ExamsOrderPopover } from '../exams-order-popover/exams-order-popover';
 import { ExamSearch } from '../../pipes/exam-search';
 import { ExamOrder } from '../../pipes/exam-order';
-
-
+import { ExamDate } from '../../pipes/exam-date';
 
 /**
  * Generated class for the ExamsPatient page.
