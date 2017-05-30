@@ -7,6 +7,7 @@ $saudeGray: #A7B8A5;
 $saudeWhite: #FFFFFF;
 $saudeBg: #1d202d;
 $saudeEmergency: yellow;
+$saudeError: red;
 
 /*
 [Table of Contents]
@@ -112,8 +113,6 @@ p {
   padding-left: 5px;
 }
 
-.col-header {}
-
 .col-left {
   text-align: left;
 }
@@ -121,10 +120,6 @@ p {
 .col-right {
   text-align: left;
 }
-
-.col-right-center {}
-
-.icon-card {}
 
 .icon-card-col {
   margin-top: 15px;
@@ -277,8 +272,6 @@ p {
   color: $saudeWhite;
   background: $saudeBg;
 }
-
-.item-full-line {}
 
 .item ion-thumbnail {
   min-width: 25px;
@@ -700,7 +693,7 @@ h2.card-exam-subtitle {
   width: 100%;
   text-align: left;
   font-size: 14px;
-  color: #f65821;
+  color: $saudeError;
   font-weight: 400;
   clear: both;
   float: left;
@@ -718,12 +711,24 @@ h2.card-exam-subtitle {
   -webkit-appearance: none;
 }
 
+.loginform input.form_input_error {
+  background-color: transparent;
+  color: $saudeWhite;
+  padding: 10px 3%;
+  width: 93%;
+  margin: 0 0 15px 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  -webkit-appearance: none;
+  border-bottom: 2px solid $saudeError;
+}
+
 input::-webkit-input-placeholder {
   color: white !important;
 }
 
 .loginform input.form_input:focus {
-  //background-color: #f5f5f5;
   border-bottom: 2px solid $saudeGreenLight;
 }
 

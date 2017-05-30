@@ -1,0 +1,35 @@
+<!--
+  Generated template for the RegisterAdvertise page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'SETTINGS.SETTINGS' | translate }}</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="saude-background no-scroll" padding>
+  <h2>Complete registration</h2>
+
+  <div class="loginform">
+    <input [ngClass]="incorrectData ? 'form_input_error required' : 'form_input required'" [(ngModel)]="patient" (ngModelChange)="inputChanged()"
+      type="text" placeholder="Patient name" />
+
+    <input [ngClass]="incorrectData ? 'form_input_error required' : 'form_input required'" [(ngModel)]="email" (ngModelChange)="inputChanged()"
+      type="text" placeholder="Email" />
+
+    <input [ngClass]="incorrectData ? 'form_input_error required' : 'form_input required'" [(ngModel)]="password" (ngModelChange)="inputChanged()"
+      type="password" placeholder="Password" />
+
+    <label *ngIf="incorrectData" class="error" style="display: block;">Please fill in all fields</label>
+
+    <input (click)='registerClick();' class="form_submit" value="Save & view exam" />
+    <input (click)='registerClick();' class="form_submit" value="No thanks, just view the exam" />
+
+  </div>
+</ion-content>

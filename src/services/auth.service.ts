@@ -1,6 +1,6 @@
-import {Injectable} from "@angular/core";
-import {Http, Response, RequestOptions, Headers} from "@angular/http";
-import {environment} from "../environments/environment";
+import { Injectable } from "@angular/core";
+import { Http, Response, RequestOptions, Headers } from "@angular/http";
+import { environment } from "../environments/environment";
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -29,8 +29,17 @@ export class AuthService {
         return currentUserRoles;
     }
 
+    getCurrentUserName() {
+        let currentUserName = (localStorage.getItem('currentUser'));
+        return currentUserName;
+    }
+
     login(username: string, password: string) {
-        localStorage.setItem('currentUser', atob(username));
+        localStorage.setItem('currentUser', username);
+
+        username = btoa(username);
+        password = btoa(password);
+
         return this.http.get(environment.baseApi + environment.loginUrl + 'LDWI=' + username + '&GKSP=' + password)
             .map(this.handleRequest)
             .catch(this.handleError);
@@ -41,9 +50,9 @@ export class AuthService {
         localStorage.removeItem('currentUserRoles');
     }
 
-    handleRequest(res: Response) {        
+    handleRequest(res: Response) {
         let body = res.json();
-        if (body.success) {
+        if (body.success == "true") {
             localStorage.setItem('token', (body.token));
             localStorage.setItem('currentUserRoles', (body.roles));
             return true;
@@ -65,6 +74,6 @@ export class AuthService {
         console.error(errMsg);
         return Observable.throw(errMsg);
     }
- 
+
 
 }

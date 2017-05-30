@@ -12,9 +12,12 @@ import { OrderPopoverService } from '../../services/orderpopover.service';
 import { ExamsDetail } from '../exams-detail/exams-detail';
 
 import { ExamsOrderPopover } from '../exams-order-popover/exams-order-popover';
+
 import { ExamSearch } from '../../pipes/exam-search';
 import { ExamOrder } from '../../pipes/exam-order';
 import { ExamDate } from '../../pipes/exam-date';
+import { ExamNames } from '../../pipes/exam-names';
+import { ExamServicename } from '../../pipes/exam-servicename';
 
 /**
  * Generated class for the ExamsDoctor page.

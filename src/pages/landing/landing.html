@@ -19,7 +19,7 @@
       <!-- 1050x1350 -->
       <img src="../../assets/images/slider/slide1.jpg" alt="" title="" />
       <div class="slider-caption">
-        <h2>{{ 'LANDING.WELCOME' | translate }} Aidan!</h2>
+        <h2>{{ 'LANDING.WELCOME' | translate }} {{authService.getCurrentUserName()}}!</h2>
         <span class="subtitle">{{ 'LANDING.INFO' | translate }} <span style="color: #9EC00C;">4</span> {{ 'LANDING.INFO2'
         | translate }}</span>
         <!--<p></p>-->

@@ -47,13 +47,13 @@
           </ion-col>
           <ion-col class="col-right col-right" col-6>
             <ion-icon class="icon-card" ios="ios-person" md="md-person"></ion-icon>
-            {{exam.patient}}
+            {{exam.patient | ExamNames}}
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col class="col-left" col-12>
             <div>
-              <i class="fa fa-stethoscope" aria-hidden="true"></i> {{ exam.serviceName | lowercase }}
+              <i class="fa fa-stethoscope" aria-hidden="true"></i> {{ exam.serviceName | ExamServicename }}
             </div>
           </ion-col>
         </ion-row>

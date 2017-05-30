@@ -39,8 +39,6 @@ export class ExamsDetail {
     this.examImages = [];
     this.modalPhotos = [];
     this.showImages = false;
-
-    console.log(this.exam);
   }
 
   ionViewDidLoad() {

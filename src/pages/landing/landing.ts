@@ -4,6 +4,8 @@ import { ExamsPage } from '../exams/exams';
 import { LoginPage } from '../login/login';
 import { SettingsPage } from '../settings/settings';
 
+import { AuthService } from '../../services/auth.service';
+
 /**
  * Generated class for the Landing page.
  *
@@ -19,7 +21,7 @@ export class LandingPage {
   login = LoginPage;
   settings = SettingsPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {
   }
 
   ionViewDidLoad() {

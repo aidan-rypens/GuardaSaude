@@ -18,6 +18,13 @@ export class ExamService {
             .catch(this.handleError);
     }
 
+    getIndividualExam(exid: string, epasscode: string) {
+        return this.http.get(environment.baseApi + environment.readIndividualExam + 'exid=' + exid + '&epasscode=' + epasscode)
+            .map(this.handleRequest)
+            .catch(this.handleError);
+    }
+
+
     getExamStatusColor(status: string) {
         if (status == "w") {
             return saudeConfig.status_waiting_color

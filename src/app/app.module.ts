@@ -16,6 +16,9 @@ import { ExamsDetail } from '../pages/exams-detail/exams-detail';
 import { ExamsPdf } from '../pages/exams-pdf/exams-pdf';
 import { ExamsPacs } from '../pages/exams-pacs/exams-pacs';
 import { SettingsPage } from '../pages/settings/settings';
+import { AccountPage } from '../pages/account/account';
+import { RegisterPage } from '../pages/register/register';
+import { RegisterAdvertise } from '../pages/register-advertise/register-advertise';
 import { ExamsOrderPopover } from '../pages/exams-order-popover/exams-order-popover';
 
 // Services
@@ -36,6 +39,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { ExamSearch } from '../pipes/exam-search';
 import { ExamOrder } from '../pipes/exam-order';
 import { ExamDate } from '../pipes/exam-date';
+import { ExamNames } from '../pipes/exam-names';
+import { ExamServicename } from '../pipes/exam-servicename';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -52,16 +57,21 @@ export function HttpLoaderFactory(http: Http) {
     ExamsPage,
     ExamsDetail,
     LandingPage,
+    RegisterPage,
     ExamsPdf,
     ExamsPacs,
     SettingsPage,
+    AccountPage,
+    RegisterAdvertise,
     ExamsOrderPopover,
     PdfViewerComponent,
     GalleryModal,
     ZoomableImage,
     ExamSearch,
     ExamOrder,
-    ExamDate
+    ExamDate,
+    ExamNames,
+    ExamServicename
   ],
   imports: [
     BrowserModule,
@@ -85,6 +95,9 @@ export function HttpLoaderFactory(http: Http) {
     ExamsDetail,
     LandingPage,
     SettingsPage,
+    AccountPage,
+    RegisterPage,
+    RegisterAdvertise,
     ExamsOrderPopover,
     ExamsPdf,
     ExamsPacs,

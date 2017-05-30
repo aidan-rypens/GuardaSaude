@@ -1,11 +1,17 @@
 import { Component, Input } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams } from 'ionic-angular';
 
 import { AuthService } from '../../services/auth.service';
 import { ClientConfigService } from '../../services/clientconfig.service';
 
+import { ExamsDetail } from '../exams-detail/exams-detail';
+import { RegisterAdvertise } from '../register-advertise/register-advertise';
+
 import { LandingPage } from '../../pages/landing/landing';
 import { Dialogs } from '@ionic-native/dialogs';
+
+import { ExamService } from '../../services/exam.service';
+import { Exam } from '../../domain/exam';
 
 /**
  * Generated class for the Login page.
@@ -17,35 +23,53 @@ import { Dialogs } from '@ionic-native/dialogs';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs) {
+  private user: string;
+  private password: string;
+  private incorrectCredentials: boolean;
 
+  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs, private examService: ExamService) {
+    this.incorrectCredentials = false;
   }
 
-  private model: any = {};
   private loginResult: any = {};
 
-  private email: any = {};
-  private password: any = {};
 
   onLoginClick() {
-    // For testing
-    this.email = 'ZG9jdG9y';
-    this.password = 'dGVzdGU=';
-    this.model.email = this.email;
-    this.model.password = this.password;
 
-    this.authService.login(this.model.email, this.model.password).subscribe(
+    //testing
+    this.user = "DUN1034230";
+    this.password = "20051972";
+
+    this.authService.login(this.user, this.password).subscribe(
       response => {
         if (response) {
-          console.log('Login: OK');
           this.navCtrl.setRoot(LandingPage);
         } else {
-          console.log('Login: Failed');
+          this.checkIndividualExam(this.user, this.password);
         }
       }
     )
+  }
+
+  checkIndividualExam(exid: string, epasscode: string) {
+    this.examService.getIndividualExam(exid, epasscode).subscribe(
+      response => {
+        if (response.result == "error") {
+          this.incorrectCredentials = true;
+        } else {
+          this.goToIndividualExam(response.rows[0]);
+        }
+      }
+    );
+  }
+
+  goToIndividualExam(exam: Exam) {
+    this.appCtrl.getRootNav().push(RegisterAdvertise, {
+      "exam": exam
+    });
   }
 
   onForgotPasswordClick() {
@@ -53,5 +77,9 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
+  }
+
+  inputChanged() {
+    this.incorrectCredentials = false;
   }
 }
