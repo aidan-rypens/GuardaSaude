@@ -41,9 +41,10 @@ export class ExamsPatientPage {
     this.viewExams = [];
 
     this.loader = this.loadingCtrl.create({
-      content: 'Logging in...'
+      content: 'Fetching Exams...'
     });
 
+    this.loader.present();
     this.loadExams();
   }
 
@@ -51,6 +52,16 @@ export class ExamsPatientPage {
     this.examService.listExams(this.currentUser.userName, this.currentUser.token, saudeConfig.role_patient).subscribe(
       response => {
         this.exams = response.rows;
+
+        if (this.exams.length > 3) {
+          for (let i = 0; i < 3; i++) {
+            this.viewExams.push(this.exams[i]);
+          }
+        } else {
+          this.viewExams = this.exams;
+        }
+
+        this.loader.dismiss();
       }
     );
   }

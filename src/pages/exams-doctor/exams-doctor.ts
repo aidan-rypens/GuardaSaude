@@ -43,9 +43,10 @@ export class ExamsDoctorPage {
     this.viewExams = [];
 
     this.loader = this.loadingCtrl.create({
-      content: 'Logging in...'
+      content: 'Fetching Exams...'
     });
 
+    this.loader.present();
     this.loadExams();
   }
 

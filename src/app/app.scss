@@ -330,7 +330,7 @@ p {
 }
 
 .comment-text-author {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -345,6 +345,10 @@ p {
 
 .comment-text {
   margin-left: 2vw;
+  font-size: 12px;
+  font-size: 13px;
+  font-weight: 300;
+  color: $saudeWhite;
 }
 
 
@@ -519,7 +523,7 @@ h2.card-exam-subtitle {
 .sidebar-nav ul li a {
   font-size: 13px;
   font-weight: 300;
-  color: #fff;
+  color: $saudeWhite;
 }
 
 

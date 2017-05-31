@@ -22,6 +22,7 @@ import { ExamServicename } from '../../pipes/exam-servicename';
 export class ExamsCommentsPage {
 
   private examComments: ExamComment;
+  private newComment: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.examComments = navParams.get('examComments');

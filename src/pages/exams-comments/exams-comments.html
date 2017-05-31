@@ -7,6 +7,18 @@
 
 <ion-content class="comments-modal saude-background" padding>
   <!--<button ion-button (click)="dismiss()"></button>-->
+  <h2>Comments</h2>
+  <ion-row>
+    <ion-col col-8>
+      <div class="loginform">
+        <input class="form_input required" [(ngModel)]="newComment" type="text" placeholder="Write comment..." />
+      </div>
+    </ion-col>
+    <ion-col col-4>
+    </ion-col>
+  </ion-row>
+  <br />
+
   <ion-grid class="comments-box">
     <div class="comments-text" *ngFor="let examComment of examComments">
       <ion-row class="comment-text-author">
