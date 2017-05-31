@@ -60,7 +60,14 @@
           </ion-row>
           <ion-row>
             <button ion-button round outline *ngIf="showImages==false" (click)="clickShowImages()" class="saude-button">Show Images</button>
+            <button ion-button round outline (click)="clickShowComments()" class="saude-button">Show Comments</button>
           </ion-row>
+
+          <!--
+          <h2>Comments</h2>
+          <p *ngFor="let comment of examComments.comments">{{comment.commentText}}</p>
+          -->
+
           <ion-row *ngIf="showImages" class="exam-image-thumb-gallery">
             <img (click)="openGallery(i)" class="exam-image-thumb" *ngFor="let examImage of examImages; let i = index" [src]="examImages[i].documentValue">
           </ion-row>

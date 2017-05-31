@@ -27,7 +27,7 @@ border-bottom: 5px #59cf84 solid
 
   <div class="saude-cards-wrapper">
     <ion-card (click)="viewExamDetail(exam)" [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards"
-      *ngFor="let exam of exams | ExamSearch: searchQuery | ExamOrder: orderPopoverService.orderName:orderPopoverService.orderReverse ">
+      *ngFor="let exam of viewExams | ExamSearch: searchQuery | ExamOrder: orderPopoverService.orderName:orderPopoverService.orderReverse ">
       <ion-card-content>
         <ion-row class="saude-cards-header">
           Exame<span>{{exam.identification}}</span>
@@ -65,6 +65,9 @@ border-bottom: 5px #59cf84 solid
         </ion-row>
       </ion-card-content>
     </ion-card>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </div>
 
 </ion-content>

@@ -303,6 +303,50 @@ p {
   color: $saudeEmergency;
 }
 
+.comments-modal {
+  position: absolute;
+  overflow: hidden;
+  max-width: 280px;
+  border-radius: 2px;
+  width: 85vw;
+  height: 60vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 0;
+  box-shadow: 0 16px 20px rgba(0, 0, 0, .4);
+  background: $saudeBg;
+}
+
+.comments-box {
+  height: 150px;
+}
+
+.comments-text {
+  color: $saudeWhite;
+  margin-bottom: 15px;
+}
+
+.comment-text-author {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.comment-text-date {
+  font-style: italic;
+  font-size: 10px;
+  margin-top: 1vw;
+  display: flex!important;
+  align-content: center!important;
+  align-items: center!important;
+}
+
+.comment-text {
+  margin-left: 2vw;
+}
+
 
 /*===============================================*/
 

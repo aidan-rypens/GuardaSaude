@@ -42,6 +42,12 @@ export class ExamService {
             .catch(this.handleError);
     }
 
+    getExamComments(username: string, token: string, exid: string) {
+        return this.http.get(environment.baseApi + environment.readExamComments + 'user=' + username + '&token=' + token + '&exid=' + exid)
+            .map(this.handleRequest)
+            .catch(this.handleError);
+    }
+
     private handleRequest(res: Response) {
         let body = res.json();
         return body || {};

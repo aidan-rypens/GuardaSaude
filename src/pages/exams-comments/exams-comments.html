@@ -1,0 +1,25 @@
+<!--
+  Generated template for the ExamsComments page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content class="comments-modal saude-background" padding>
+  <!--<button ion-button (click)="dismiss()"></button>-->
+  <ion-grid class="comments-box">
+    <div class="comments-text" *ngFor="let examComment of examComments">
+      <ion-row class="comment-text-author">
+        <ion-col class="comment-text-author">
+          {{examComment.authorName | ExamNames}}
+        </ion-col>
+        <ion-col col-4 class="comment-text-date">
+          {{examComment.date | ExamDate}}
+        </ion-col>
+      </ion-row>
+      <ion-row class="comment-text">
+        {{examComment.commentText}}
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

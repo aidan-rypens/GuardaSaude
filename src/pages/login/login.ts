@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { App, NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { AuthService } from '../../services/auth.service';
 import { ClientConfigService } from '../../services/clientconfig.service';
@@ -29,9 +29,15 @@ export class LoginPage {
   private user: string;
   private password: string;
   private incorrectCredentials: boolean;
+  private loader: any;
 
-  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs, private examService: ExamService) {
+  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs, private examService: ExamService, public loadingCtrl: LoadingController) {
     this.incorrectCredentials = false;
+
+    this.loader = this.loadingCtrl.create({
+      content: 'Logging in...'
+    });
+
   }
 
   private loginResult: any = {};
@@ -39,9 +45,11 @@ export class LoginPage {
 
   onLoginClick() {
 
+    this.loader.present();
+
     //testing
-    this.user = "DUN1034230";
-    this.password = "20051972";
+    this.user = "doctor";
+    this.password = "teste";
 
     this.authService.login(this.user, this.password).subscribe(
       response => {
@@ -50,6 +58,7 @@ export class LoginPage {
         } else {
           this.checkIndividualExam(this.user, this.password);
         }
+        this.loader.dismiss();
       }
     )
   }

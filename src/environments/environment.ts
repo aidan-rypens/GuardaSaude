@@ -5,5 +5,6 @@ export const environment = {
   loginUrl: 'authenticateUser?',
   listExamsUrl: 'listExams?',
   getExamImageUrl: 'getExamImage?',
-  readIndividualExam: 'readIndividualExam?'
+  readIndividualExam: 'readIndividualExam?',
+  readExamComments: 'getExamComments?'
 };

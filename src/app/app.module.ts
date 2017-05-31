@@ -20,6 +20,7 @@ import { AccountPage } from '../pages/account/account';
 import { RegisterPage } from '../pages/register/register';
 import { RegisterAdvertise } from '../pages/register-advertise/register-advertise';
 import { ExamsOrderPopover } from '../pages/exams-order-popover/exams-order-popover';
+import { ExamsCommentsPage } from '../pages/exams-comments/exams-comments';
 
 // Services
 import { AuthService } from '../services/auth.service';
@@ -64,6 +65,7 @@ export function HttpLoaderFactory(http: Http) {
     AccountPage,
     RegisterAdvertise,
     ExamsOrderPopover,
+    ExamsCommentsPage,
     PdfViewerComponent,
     GalleryModal,
     ZoomableImage,
@@ -99,6 +101,7 @@ export function HttpLoaderFactory(http: Http) {
     RegisterPage,
     RegisterAdvertise,
     ExamsOrderPopover,
+    ExamsCommentsPage,
     ExamsPdf,
     ExamsPacs,
     GalleryModal

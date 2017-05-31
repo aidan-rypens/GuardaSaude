@@ -9,11 +9,14 @@ import { ExamsPdf } from './../exams-pdf/exams-pdf';
 import { ExamsPacs } from '../../pages/exams-pacs/exams-pacs';
 
 import { Exam } from '../../domain/exam';
-import { ExamImg } from "../../domain/examImg";
+import { ExamImg } from '../../domain/examImg';
+import { ExamComment } from '../../domain/examComment';
 
 import { ExamService } from '../../services/exam.service';
 import { AuthService } from '../../services/auth.service';
 import { ExamDate } from '../../pipes/exam-date';
+
+import { ExamsCommentsPage } from '../exams-comments/exams-comments';
 
 /**
  * Generated class for the ExamsDetail page.
@@ -32,13 +35,16 @@ export class ExamsDetail {
   private currentUser: any;
   private modalPhotos: any[];
   private showImages: boolean;
+  private examComments: ExamComment[];
 
   constructor(public appCtrl: App, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
     this.exam = navParams.get("exam");
     this.currentUser = this.authService.getTokenCurrentUser();
     this.examImages = [];
     this.modalPhotos = [];
+    this.examComments = [];
     this.showImages = false;
+    this.getExamComments(this.authService.getTokenCurrentUser().userName, this.authService.getTokenCurrentUser().token, this.exam.identification)
   }
 
   ionViewDidLoad() {
@@ -64,6 +70,14 @@ export class ExamsDetail {
     );
   }
 
+  getExamComments(username: string, token: string, exid: string) {
+    this.examService.getExamComments(username, token, exid).subscribe(
+      response => {
+        this.examComments = response.comments;
+      }
+    );
+  }
+
   openGallery(i: number) {
     let modal = this.modalCtrl.create(GalleryModal, {
       photos: this.modalPhotos,
@@ -85,11 +99,14 @@ export class ExamsDetail {
       this.showImages = true;
     }
   }
-
   clickShowPdf() {
   }
   clickShowPax() {
     this.appCtrl.getRootNav().push(ExamsPacs);
+  }
+  clickShowComments() {
+    let modal = this.modalCtrl.create(ExamsCommentsPage, { 'examComments': this.examComments });
+    modal.present();
   }
 
 }

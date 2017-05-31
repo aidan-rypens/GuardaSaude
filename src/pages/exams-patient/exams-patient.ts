@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { App, NavController, NavParams, PopoverController } from 'ionic-angular';
+import { App, NavController, NavParams, PopoverController, LoadingController } from 'ionic-angular';
 
 import { Exam } from '../../domain/exam';
 import { environment } from '../../environments/environment';
@@ -32,10 +32,19 @@ export class ExamsPatientPage {
 
   private currentUser: any;
   private exams: Exam[];
+  private viewExams: Exam[];
   private searchQuery: string = '';
+  private loader: any;
 
-  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService, public popoverCtrl: PopoverController, public orderPopoverService: OrderPopoverService) {
+  constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService, public popoverCtrl: PopoverController, public orderPopoverService: OrderPopoverService, public loadingCtrl: LoadingController) {
     this.currentUser = this.authService.getTokenCurrentUser();
+    this.viewExams = [];
+
+    this.loader = this.loadingCtrl.create({
+      content: 'Logging in...'
+    });
+
+    this.loadExams();
   }
 
   loadExams() {
@@ -44,10 +53,6 @@ export class ExamsPatientPage {
         this.exams = response.rows;
       }
     );
-  }
-
-  ionViewDidLoad() {
-    this.loadExams();
   }
 
   getExamStatusColor(status: string) {
@@ -74,5 +79,26 @@ export class ExamsPatientPage {
 
   onInput(ev: any) {
     this.searchQuery = ev.target.value;
+  }
+
+  doInfinite(infiniteScroll) {
+    setTimeout(() => {
+
+      // REMOVE AFTER PRESENTATION
+      let max = this.exams.length;
+      for (let i = 0; i < max; i++) {
+        this.exams.push(this.exams[i]);
+      }// END REMOVE AFTER PRESENTATION
+
+      if (this.viewExams.length + 3 <= this.exams.length) {
+        for (let i = this.viewExams.length; i < this.viewExams.length + 3; i++) {
+          this.viewExams.push(this.exams[i])
+        }
+      } else {
+        this.viewExams = this.exams;
+      }
+      infiniteScroll.complete();
+    }, 500);
+
   }
 }
