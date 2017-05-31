@@ -1,35 +1,35 @@
 <ion-content class="saude-background saude-popover">
   <ion-list>
     <ion-list-header>
-      Order By
+      {{ 'ORDER.ORDERBY' | translate }}
     </ion-list-header>
     <button (click)="orderPopoverService.clickOrderBy(0,'patient')" [ngClass]="orderPopoverService.orderById===0 ? 'saude-menu-toggle' : 'saude-menu'"
       ion-item detail-none>
     <ion-thumbnail item-right>
       <img [src]="orderPopoverService.iconThumbs[0]">
     </ion-thumbnail>
-    Patient
+    {{ 'ORDER.PATIENT' | translate }}
   </button>
     <button (click)="orderPopoverService.clickOrderBy(1,'identification')" [ngClass]="orderPopoverService.orderById===1 ? 'saude-menu-toggle' : 'saude-menu'"
       ion-item detail-none>
     <ion-thumbnail item-right>
       <img [src]="orderPopoverService.iconThumbs[1]">
     </ion-thumbnail>
-    Protocol
+    {{ 'ORDER.PROTOCOL' | translate }}
   </button>
     <button (click)="orderPopoverService.clickOrderBy(2,'executionDate')" [ngClass]="orderPopoverService.orderById===2 ? 'saude-menu-toggle' : 'saude-menu'"
       ion-item detail-none>
     <ion-thumbnail item-right>
       <img [src]="orderPopoverService.iconThumbs[2]">
     </ion-thumbnail>
-    Exam Date
+    {{ 'ORDER.EXAMDATE' | translate }}
   </button>
     <button (click)="orderPopoverService.clickOrderBy(3,'isEmergency')" [ngClass]="orderPopoverService.orderById===3 ? 'saude-menu-toggle' : 'saude-menu'"
       ion-item detail-none>
     <ion-thumbnail item-right>
       <img [src]="orderPopoverService.iconThumbs[3]">
     </ion-thumbnail>
-    Emergency
+    {{ 'ORDER.EMERGENCY' | translate }}
   </button>
   </ion-list>
 </ion-content>

@@ -23,8 +23,6 @@ export class ExamService {
             .map(this.handleRequest)
             .catch(this.handleError);
     }
-
-
     getExamStatusColor(status: string) {
         if (status == "w") {
             return saudeConfig.status_waiting_color
@@ -35,15 +33,19 @@ export class ExamService {
         };
         return saudeConfig.status_unknown_color;
     }
-
     getExamImage(username: string, token: string, exid: string, edid: number) {
         return this.http.get(environment.baseApi + environment.getExamImageUrl + 'user=' + username + '&token=' + token + '&exid=' + exid + '&edid=' + edid)
             .map(this.handleRequest)
             .catch(this.handleError);
     }
-
     getExamComments(username: string, token: string, exid: string) {
         return this.http.get(environment.baseApi + environment.readExamComments + 'user=' + username + '&token=' + token + '&exid=' + exid)
+            .map(this.handleRequest)
+            .catch(this.handleError);
+    }
+
+    postExamComment(username: string, token: string, exid: string, msg: string) {
+        return this.http.get(environment.baseApi + environment.saveExamComments + 'user=' + username + '&token=' + token + '&exid=' + exid + '&msg=' + msg)
             .map(this.handleRequest)
             .catch(this.handleError);
     }

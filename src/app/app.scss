@@ -6,6 +6,7 @@ $saudeGreenCards: #16a086;
 $saudeGray: #A7B8A5;
 $saudeWhite: #FFFFFF;
 $saudeBg: #1d202d;
+$saudeBgLight: #24262D;
 $saudeEmergency: yellow;
 $saudeError: red;
 
@@ -113,12 +114,12 @@ p {
   padding-left: 5px;
 }
 
-.col-left {
-  text-align: left;
+.icon-card {
+  margin-right: 5px;
 }
 
-.col-right {
-  text-align: left;
+.icon-card-fa {
+  margin-right: 9px;
 }
 
 .icon-card-col {
@@ -247,7 +248,7 @@ p {
   color: $saudeWhite;
 }
 
-.saude-fab-attachments {
+.saude-fabs {
   background: $saudeGreenLight;
 }
 
@@ -260,6 +261,19 @@ p {
 .saude-sort-thumb {
   width: 50%;
   height: 50%;
+}
+
+.popover-ios .popover-content {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .7);
+  /*border: 10px solid $saudeBg;*/
+}
+
+.popover-content {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .7);
+}
+
+.saude-popover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .7);
 }
 
 .saude-popover button {
@@ -348,6 +362,18 @@ p {
   font-size: 12px;
   font-size: 13px;
   font-weight: 300;
+  color: $saudeWhite;
+}
+
+.comment-icon {
+  font-size: 30px;
+  color: $saudeWhite;
+  margin-top: 2vw;
+}
+
+.comment-icon-close {
+  float: right;
+  font-size: 30px;
   color: $saudeWhite;
 }
 

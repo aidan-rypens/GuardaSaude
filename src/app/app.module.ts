@@ -17,7 +17,6 @@ import { ExamsPdf } from '../pages/exams-pdf/exams-pdf';
 import { ExamsPacs } from '../pages/exams-pacs/exams-pacs';
 import { SettingsPage } from '../pages/settings/settings';
 import { AccountPage } from '../pages/account/account';
-import { RegisterPage } from '../pages/register/register';
 import { RegisterAdvertise } from '../pages/register-advertise/register-advertise';
 import { ExamsOrderPopover } from '../pages/exams-order-popover/exams-order-popover';
 import { ExamsCommentsPage } from '../pages/exams-comments/exams-comments';
@@ -27,6 +26,7 @@ import { AuthService } from '../services/auth.service';
 import { ExamService } from '../services/exam.service';
 import { ClientConfigService } from '../services/clientconfig.service';
 import { OrderPopoverService } from '../services/orderpopover.service';
+import { DateTimeService } from '../services/datetime.service';
 
 // External Components
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
@@ -58,7 +58,6 @@ export function HttpLoaderFactory(http: Http) {
     ExamsPage,
     ExamsDetail,
     LandingPage,
-    RegisterPage,
     ExamsPdf,
     ExamsPacs,
     SettingsPage,
@@ -98,7 +97,6 @@ export function HttpLoaderFactory(http: Http) {
     LandingPage,
     SettingsPage,
     AccountPage,
-    RegisterPage,
     RegisterAdvertise,
     ExamsOrderPopover,
     ExamsCommentsPage,
@@ -111,6 +109,7 @@ export function HttpLoaderFactory(http: Http) {
     ExamService,
     ClientConfigService,
     OrderPopoverService,
+    DateTimeService,
     StatusBar,
     SplashScreen,
     Dialogs,

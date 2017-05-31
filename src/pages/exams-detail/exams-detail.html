@@ -13,7 +13,7 @@
 <ion-content class="saude-background" padding>
   <div>
     <ion-fab top left>
-      <button class="saude-fab-attachments" ion-fab><ion-icon name="more"></ion-icon></button>
+      <button class="saude-fabs" ion-fab color="saudeGreenDark"><ion-icon name="more"></ion-icon></button>
       <ion-fab-list side="right">
         <button (click)="clickShowPdf()" ion-fab><ion-icon name="attach"></ion-icon></button>
       </ion-fab-list>
@@ -21,53 +21,49 @@
         <button (click)="clickShowPax()" ion-fab><ion-icon name="camera"></ion-icon></button>
       </ion-fab-list>
     </ion-fab>
+    <ion-fab top right>
+      <button class="saude-fabs" (click)="clickShowComments()" ion-fab color="saudeGreenDark"><ion-icon name="text"></ion-icon></button>
+    </ion-fab>
     <ion-card [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards">
       <ion-card-content>
         <ion-grid>
           <ion-row class="saude-cards-header">
-            Exame<span>{{exam.identification}}</span>
+            {{ 'EXAMS.EXAM' | translate }}<span>{{exam.identification}}</span>
           </ion-row>
           <ion-row>
-            <ion-col class="col-left" col-6>
+            <ion-col col-6>
               <ion-icon class="icon-card" ios="ios-calendar" md="md-calendar"></ion-icon>
               {{ exam.executionDate | ExamDate }}
             </ion-col>
-            <ion-col class="col-right" col-6>
+            <ion-col col-6>
               <ion-icon class="icon-card" ios="ios-medkit" md="md-medkit"></ion-icon>
               {{exam.clinicName}}
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="col-left" col-6>
-              <i class="fa fa-user-md" aria-hidden="true"></i> {{exam.referringPhysicianName}}
+            <ion-col col-6>
+              <i class="fa fa-user-md icon-card-fa" aria-hidden="true"></i> {{exam.referringPhysicianName}}
             </ion-col>
-            <ion-col class="col-right col-right" col-6>
+            <ion-col col-6>
               <ion-icon class="icon-card" ios="ios-person" md="md-person"></ion-icon>
               {{exam.patient | ExamNames}}
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="col-left" col-12>
+            <ion-col col-12>
               <div>
-                <i class="fa fa-stethoscope" aria-hidden="true"></i> {{ exam.serviceName | ExamServicename }}
+                <i class="fa fa-stethoscope icon-card-fa" aria-hidden="true"></i> {{ exam.serviceName | ExamServicename }}
               </div>
             </ion-col>
           </ion-row>
           <ion-row *ngIf="exam.isEmergency" class="saude-emergency-row">
             <ion-icon class="saude-isEmergency-icon" name="pulse"></ion-icon>
-            <p>Emergency!</p>
+            <p>{{ 'EXAMS.EMERGENCY' | translate }}!</p>
             <ion-icon class="saude-isEmergency-icon" name="pulse"></ion-icon>
           </ion-row>
           <ion-row>
-            <button ion-button round outline *ngIf="showImages==false" (click)="clickShowImages()" class="saude-button">Show Images</button>
-            <button ion-button round outline (click)="clickShowComments()" class="saude-button">Show Comments</button>
+            <button ion-button *ngIf="showImages==false" (click)="clickShowImages()" class="saude-button">{{ 'EXAMS.SHOWIMAGES' | translate }}</button>
           </ion-row>
-
-          <!--
-          <h2>Comments</h2>
-          <p *ngFor="let comment of examComments.comments">{{comment.commentText}}</p>
-          -->
-
           <ion-row *ngIf="showImages" class="exam-image-thumb-gallery">
             <img (click)="openGallery(i)" class="exam-image-thumb" *ngFor="let examImage of examImages; let i = index" [src]="examImages[i].documentValue">
           </ion-row>

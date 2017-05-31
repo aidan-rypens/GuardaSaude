@@ -17,10 +17,12 @@ export class ExamsPdf {
 
   private exam: Exam;
   //private pdfDocument
+  private url: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.exam = navParams.get("exam");
-    console.log(this.exam);
+    //this.url = "http://www.pdf995.com/samples/pdf.pdf";
+    this.url="../../assets/pdf/notification.pdf";
   }
 
   ionViewDidLoad() {

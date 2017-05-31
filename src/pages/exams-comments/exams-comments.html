@@ -6,15 +6,16 @@
 -->
 
 <ion-content class="comments-modal saude-background" padding>
-  <!--<button ion-button (click)="dismiss()"></button>-->
-  <h2>Comments</h2>
+  <ion-icon (click)="dismiss()" class="comment-icon-close" name="close"></ion-icon>
+  <h2>{{ 'EXAMS.COMMENTS' | translate }}</h2>
   <ion-row>
-    <ion-col col-8>
+    <ion-col col-10>
       <div class="loginform">
         <input class="form_input required" [(ngModel)]="newComment" type="text" placeholder="Write comment..." />
       </div>
     </ion-col>
-    <ion-col col-4>
+    <ion-col col-2>
+      <ion-icon (click)='clickAddComment()' class="comment-icon" name="send"></ion-icon>
     </ion-col>
   </ion-row>
   <br />
@@ -26,7 +27,7 @@
           {{examComment.authorName | ExamNames}}
         </ion-col>
         <ion-col col-4 class="comment-text-date">
-          {{examComment.date | ExamDate}}
+          {{examComment.date}}
         </ion-col>
       </ion-row>
       <ion-row class="comment-text">

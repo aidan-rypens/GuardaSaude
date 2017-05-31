@@ -12,7 +12,8 @@ border-bottom: 5px #59cf84 solid
   <ion-row>
     <ion-col col-10>
       <ion-toolbar color="saudeBg">
-        <ion-searchbar placeholder="Search..." [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+        <ion-searchbar placeholder="{{ 'EXAMS.SEARCH' | translate }}" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)"
+          (ionCancel)="onCancel($event)">
         </ion-searchbar>
       </ion-toolbar>
     </ion-col>
@@ -30,7 +31,7 @@ border-bottom: 5px #59cf84 solid
       *ngFor="let exam of viewExams | ExamSearch: searchQuery | ExamOrder: orderPopoverService.orderName:orderPopoverService.orderReverse ">
       <ion-card-content>
         <ion-row class="saude-cards-header">
-          Exame<span>{{exam.identification}}</span>
+          {{ 'EXAMS.EXAM' | translate }}<span>{{exam.identification}}</span>
         </ion-row>
         <ion-row>
           <ion-col class="col-left" col-6>
@@ -60,7 +61,7 @@ border-bottom: 5px #59cf84 solid
         </ion-row>
         <ion-row *ngIf="exam.isEmergency" class="saude-emergency-row">
           <ion-icon class="saude-isEmergency-icon" name="pulse"></ion-icon>
-          <p>Emergency!</p>
+          <p>{{ 'EXAMS.EMERGENCY' | translate }}!</p>
           <ion-icon class="saude-isEmergency-icon" name="pulse"></ion-icon>
         </ion-row>
       </ion-card-content>

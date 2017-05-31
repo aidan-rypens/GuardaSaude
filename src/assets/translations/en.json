@@ -30,11 +30,25 @@
     "PATIENT": "Patient",
     "EXAM": "Exam",
     "EXAMDETAIL": "Exam Details",
-    "VIEWPDF": "View PDF"
+    "VIEWPDF": "View PDF",
+    "COMMENTS": "Comments",
+    "EMERGENCY": "Emergency",
+    "SHOWIMAGES": "Show Images",
+    "SEARCH": "Search..."
   },
   "MENU": {
     "LOGIN": "Login",
     "HOME": "Home",
     "EXAMS": "Exams"
+  },
+  "ACCOUNT": {
+    "ACCOUNT": "Account"
+  },
+  "ORDER": {
+    "ORDERBY": "Order By",
+    "PATIENT": "Patient",
+    "PROTOCOL": "Protocol",
+    "EXAMDATE": "Exam date",
+    "EMERGENCY": "Emergency"
   }
 }

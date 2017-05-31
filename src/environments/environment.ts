@@ -6,5 +6,6 @@ export const environment = {
   listExamsUrl: 'listExams?',
   getExamImageUrl: 'getExamImage?',
   readIndividualExam: 'readIndividualExam?',
-  readExamComments: 'getExamComments?'
+  readExamComments: 'getExamComments?',
+  saveExamComments: 'saveExamComments/?'
 };
