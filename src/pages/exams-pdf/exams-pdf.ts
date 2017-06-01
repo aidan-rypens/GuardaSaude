@@ -22,10 +22,7 @@ export class ExamsPdf {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.exam = navParams.get("exam");
     //this.url = "http://www.pdf995.com/samples/pdf.pdf";
-    this.url="../../assets/pdf/notification.pdf";
+    //this.url="../../assets/pdf/notification.pdf";
+    this.url = "../../assets/pdf/sample.pdf";
   }
-
-  ionViewDidLoad() {
-  }
-
 }

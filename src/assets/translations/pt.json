@@ -36,5 +36,15 @@
     "LOGIN": "Login",
     "HOME": "Início",
     "EXAMS": "Exames"
+  },
+  "ACCOUNT": {
+    "ACCOUNT": "Conta"
+  },
+  "ORDER": {
+    "ORDERBY": "Ordenar por",
+    "PATIENT": "Paciente",
+    "PROTOCOL": "Protocolo",
+    "EXAMDATE": "Data do exame",
+    "EMERGENCY": "Emergências"
   }
 }

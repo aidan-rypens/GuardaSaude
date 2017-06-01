@@ -7,5 +7,6 @@ export const environment = {
   getExamImageUrl: 'getExamImage?',
   readIndividualExam: 'readIndividualExam?',
   readExamComments: 'getExamComments?',
-  saveExamComments: 'saveExamComments/?'
+  saveExamComments: 'saveExamComments/?',
+  readExamPdf: 'getPDFdoc'
 };

@@ -43,11 +43,21 @@ export class ExamService {
             .map(this.handleRequest)
             .catch(this.handleError);
     }
+    getExamPdf(username: string, token: string, exid: string, edid: number) {
+        return this.http.get(environment.baseApi + environment.readExamPdf + 'user=' + username + '&token=' + token + '&exid=' + exid)
+            .map(this.handleFile)
+            .catch(this.handleError);
+    }
 
     postExamComment(username: string, token: string, exid: string, msg: string) {
         return this.http.get(environment.baseApi + environment.saveExamComments + 'user=' + username + '&token=' + token + '&exid=' + exid + '&msg=' + msg)
             .map(this.handleRequest)
             .catch(this.handleError);
+    }
+
+    private handleFile(res: Response) {
+        let body = res.json();
+        return body || {};
     }
 
     private handleRequest(res: Response) {

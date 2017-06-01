@@ -35,6 +35,8 @@ export class ExamsDetail {
   private currentUser: any;
   private modalPhotos: any[];
   private showImages: boolean;
+  private userRoles: string[];
+  private showComments: boolean = false;
 
   constructor(public appCtrl: App, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private examService: ExamService, private authService: AuthService) {
     this.exam = navParams.get("exam");
@@ -43,6 +45,13 @@ export class ExamsDetail {
     this.modalPhotos = [];
     this.showImages = false;
 
+    this.userRoles = this.authService.getCurrentUserRoles();
+    if (this.userRoles.some(x => x === "ROLE_PATIENT")) {
+      this.showComments = false;
+    }
+    if (this.userRoles.some(x => x === "ROLE_HEALTH_PROFESSIONAL")) {
+      this.showComments = true;
+    }
   }
 
   ionViewDidLoad() {

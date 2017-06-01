@@ -21,7 +21,7 @@
         <button (click)="clickShowPax()" ion-fab><ion-icon name="camera"></ion-icon></button>
       </ion-fab-list>
     </ion-fab>
-    <ion-fab top right>
+    <ion-fab *ngIf="showComments" top right>
       <button class="saude-fabs" (click)="clickShowComments()" ion-fab color="saudeGreenDark"><ion-icon name="text"></ion-icon></button>
     </ion-fab>
     <ion-card [ngStyle]="{'border-color': getExamStatusColor(exam.status)}" class="saude-cards">
