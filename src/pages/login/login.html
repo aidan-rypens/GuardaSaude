@@ -20,6 +20,10 @@
         <input [ngClass]="incorrectCredentials ? 'form_input_error required' : 'form_input required'" [(ngModel)]="password" (ngModelChange)="inputChanged()"
           type="password" placeholder="{{ 'LOGIN.PASSWORD' | translate }}" />
         <label *ngIf="incorrectCredentials" class="error" style="display: block;">Incorrect username or password</label>
+        <div (click)='onRememberMeClick()' class="remember_me">
+          Remember me
+          <ion-icon *ngIf="rememberMe" name="checkmark"></ion-icon>
+        </div>
         <div class="forgot_pass">
           <a (click)='onForgotPasswordClick()'>{{ 'LOGIN.FORGOT' | translate }}</a>
         </div>

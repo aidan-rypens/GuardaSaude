@@ -30,6 +30,7 @@ export class LoginPage {
   private password: string;
   private incorrectCredentials: boolean;
   private loader: any;
+  private rememberMe: boolean = false;
 
   constructor(public appCtrl: App, public navCtrl: NavController, public navParams: NavParams, private authService: AuthService, private dialogs: Dialogs, private examService: ExamService, public loadingCtrl: LoadingController) {
     this.incorrectCredentials = false;
@@ -44,16 +45,17 @@ export class LoginPage {
 
 
   onLoginClick() {
-
     this.loader.present();
-
-    //testing
-    this.user = "doctor";
-    this.password = "teste";
 
     this.authService.login(this.user, this.password).subscribe(
       response => {
         if (response) {
+          if (this.rememberMe) {
+            localStorage.setItem('rememberMe', 't');
+            localStorage.setItem('rememberUser', this.user);
+            localStorage.setItem('rememberPassword', this.password);
+          };
+
           this.navCtrl.setRoot(LandingPage);
         } else {
           this.checkIndividualExam(this.user, this.password);
@@ -61,6 +63,16 @@ export class LoginPage {
         this.loader.dismiss();
       }
     )
+  }
+
+  onRememberMeClick() {
+    if (this.rememberMe == true) {
+      this.rememberMe = false;
+      localStorage.setItem('rememberMe', 'f');
+    } else {
+      this.rememberMe = true;
+      localStorage.setItem('rememberMe', 't');
+    }
   }
 
   checkIndividualExam(exid: string, epasscode: string) {
@@ -86,6 +98,11 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
+    if (localStorage.getItem('rememberMe') == 't') {
+      this.rememberMe = true;
+      this.user = localStorage.getItem('rememberUser');
+      this.password = localStorage.getItem('rememberPassword');
+    }
   }
 
   inputChanged() {

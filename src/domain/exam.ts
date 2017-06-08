@@ -3,7 +3,7 @@ export interface Exam {
     documents: any,
     executionDate: Date,
     id: number,
-    identification,
+    identification: string,
     images: any,
     isEmergency: boolean,
     pacsMobileViewerURL,

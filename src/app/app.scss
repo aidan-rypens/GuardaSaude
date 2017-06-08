@@ -826,7 +826,7 @@ input::-webkit-input-placeholder {
 .loginform input.form_submit {
   width: 100%;
   padding: 12px 0;
-  margin: 10px 0 0 0;
+  margin: 40px 0 0 0;
   text-align: center;
   cursor: pointer;
   font-size: 16px;
@@ -842,11 +842,26 @@ input::-webkit-input-placeholder {
   width: 100%;
   text-align: right;
   font-size: 12px;
+  margin-top: 10px;
 }
 
 .forgot_pass a {
   font-weight: 500;
   color: $saudeGreenLight;
+}
+
+.remember_me {
+  width: 100%;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 500;
+  color: $saudeGreenLight;
+  margin-top: 10px;
+}
+
+.remember_me ion-icon {
+  font-weight: bold;
+  margin-left: 5px;
 }
 
 

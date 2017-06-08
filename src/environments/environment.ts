@@ -8,5 +8,8 @@ export const environment = {
   readIndividualExam: 'readIndividualExam?',
   readExamComments: 'getExamComments?',
   saveExamComments: 'saveExamComments/?',
-  readExamPdf: 'getPDFdoc'
+  readExamPdf: 'getPDFdoc?',
+  getExamReportAsPDF: 'getExamReportAsPDF?',
+  getExamDocumentsAsPDF: 'getExamDocumentsAsPDF?',
+  getExamAttachedPDFs: 'getExamAttachedPDFs?'
 };

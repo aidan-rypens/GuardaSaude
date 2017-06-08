@@ -48,6 +48,18 @@ export class ExamService {
             .map(this.handleFile)
             .catch(this.handleError);
     }
+    getExamReportAsPdf(user: string, token: string, exid: string) {
+        let url = environment.baseApi + environment.getExamReportAsPDF + 'user=' + user + '&token=' + token + '&exid=' + exid;
+        return url;
+    }
+    getExamDocumentsAsPdf(user: string, token: string, exid: string) {
+        let url = environment.baseApi + environment.getExamDocumentsAsPDF + 'user=' + user + '&token=' + token + '&exid=' + exid;
+        return url;
+    }
+    getExamAttachedPdfs(user: string, token: string, exid: string) {
+        let url = environment.baseApi + environment.getExamAttachedPDFs + 'user=' + user + '&token=' + token + '&exid=' + exid;
+        return url;
+    }
 
     postExamComment(username: string, token: string, exid: string, msg: string) {
         return this.http.get(environment.baseApi + environment.saveExamComments + 'user=' + username + '&token=' + token + '&exid=' + exid + '&msg=' + msg)

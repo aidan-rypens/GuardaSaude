@@ -85,12 +85,6 @@ export class ExamsDetail {
     modal.present();
   }
 
-  openExamPdf() {
-    this.appCtrl.getRootNav().push(ExamsPdf, {
-      "exam": this.exam
-    });
-  }
-
   clickShowImages() {
     if (this.showImages) {
       this.showImages = false;
@@ -99,7 +93,10 @@ export class ExamsDetail {
     }
   }
   clickShowPdf() {
-    this.appCtrl.getRootNav().push(ExamsPdf);
+    let examPdfUrl = this.examService.getExamDocumentsAsPdf(this.currentUser.userName, this.currentUser.token, this.exam.identification);
+    this.appCtrl.getRootNav().push(ExamsPdf, {
+      "url": examPdfUrl
+    });
   }
   clickShowPax() {
     this.appCtrl.getRootNav().push(ExamsPacs);
