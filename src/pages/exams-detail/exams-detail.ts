@@ -55,6 +55,8 @@ export class ExamsDetail {
   }
 
   ionViewDidLoad() {
+    console.log(this.exam);
+
     for (let i = 0; i < this.exam.images.length; i++) {
       this.getExamImages(this.exam.images[i].examIdentification, this.exam.images[i].imageIdentification);
     }
